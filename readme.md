@@ -81,3 +81,13 @@ python manage.py runserver
 Accede al sitio web en tu navegador en http://127.0.0.1:8000/.
 
 Utiliza la consola de Django para crear, listar, actualizar y eliminar registros.
+
+## Capturas de pantalla ##
+Panel Admin
+![paneladmin](https://github.com/user-attachments/assets/c0168e8f-4a2e-46a2-b948-afda58e3b66f)
+Primera migracion: creado el modelo inmueble
+![primera_migracion](https://github.com/user-attachments/assets/135d8dd5-b40a-42c6-a2d2-2ce9c4b5f331)
+Segunda migracion: registro de inmueble
+![seunda_migracion_creacion](https://github.com/user-attachments/assets/e9edeacf-8766-4ce6-a88f-32c86fc71b1f)
+Tercera migracion: eliminacion de registro
+![tercera_migracion_borrado](https://github.com/user-attachments/assets/53f4806f-407b-4821-bbc4-76d82b9ba4a5)
