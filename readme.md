@@ -1,4 +1,5 @@
 # Proyecto: Sistema de Gestión de Arriendos de Inmuebles
+## Hito 1 - Conectando Django a una base de datos
 
 Este proyecto tiene como objetivo desarrollar un sitio web para la gestión de inmuebles disponibles para arriendo utilizando Django y PostgreSQL.
 
@@ -46,7 +47,7 @@ DATABASES = {
 ```
 
 6. Aplicar Migraciones
-   ```bash
+   ```
    python manage.py makemigrations
    python manage.py migrate
    ```
