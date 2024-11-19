@@ -21,7 +21,7 @@ cd <nombre-del-directorio>
 
 ```
 
-###3. Crear y Activar el Entorno Virtual
+### 3. Crear y Activar el Entorno Virtual
 
 ```bash
 python3 -m venv venv
@@ -29,8 +29,8 @@ source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
 ```
 
-5. Configurar el Proyecto
-   En el archivo settings.py, configura la base de datos:
+### 4. Configurar el Proyecto
+En el archivo settings.py, configura la base de datos:
 
 ```bash
 DATABASES = {
@@ -46,15 +46,13 @@ DATABASES = {
 
 ```
 
-6. Aplicar Migraciones
+### 5. Aplicar Migraciones
    ```
    python manage.py makemigrations
    python manage.py migrate
    ```
 
-````
-
-7. Ejecutar el Servidor
+### 6. Ejecutar el Servidor
 
    ```bash
    python manage.py runserver
@@ -64,8 +62,11 @@ Observaciones
 
 Asegúrate de que el servidor PostgreSQL esté activo antes de realizar las operaciones.
 Utiliza la consola interactiva de Django (python manage.py shell) para probar las operaciones CRUD.
+
 En caso de errores de migración, revisa las configuraciones de settings.py y verifica la instalación de PostgreSQL.
-Pasos para Probar el Proyecto
+
+
+## **Pasos para Probar el Proyecto**
 
 Configura correctamente el entorno virtual y la base de datos como se detalla en los pasos anteriores.
 Realiza las migraciones necesarias.
