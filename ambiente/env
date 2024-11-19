@@ -1,0 +1,7 @@
+DB_NAME=mi_casita_db
+DB_USER=postgres
+DB_PASSWORD=12345678
+DB_HOST=localhost
+DB_PORT=5432
+DEBUG=True
+SECRET_KEY = "django-insecure-)=t-y$e33uf=49u)3ke_a-)4_4fm$2k*+#%p#nyqeg2mrprhut"
