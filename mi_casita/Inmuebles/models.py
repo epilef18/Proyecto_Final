@@ -13,6 +13,13 @@ class Inmueble(models.Model):
     comuna = models.CharField(max_length=100)
     tipo_inmueble = models.CharField(max_length=50)
     precio_mensual = models.DecimalField(max_digits=10, decimal_places=2)
+    
+class Region(models.Model):
+    nombre = models.CharField(max_length=100)
+
+class Comuna(models.Model):
+    nombre = models.CharField(max_length=100)
+    region = models.ForeignKey(Region, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre
