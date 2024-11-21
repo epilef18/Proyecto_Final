@@ -15,34 +15,8 @@
     <form method="POST">
       {% csrf_token %} {{ form.as_p }}
       <!-- Muestra el formulario -->
-
-      <!-- Campos ocultos para enviar latitud y longitud -->
-      <input type="hidden" id="lat" name="lat" />
-      <input type="hidden" id="lon" name="lon" />
-
       <button type="submit">Registrar</button>
     </form>
-
-    <script>
-      // Obtener la ubicación del usuario usando la API de Geolocalización
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          function (position) {
-            var lat = position.coords.latitude;
-            var lon = position.coords.longitude;
-
-            // Llenar los campos ocultos con la latitud y longitud
-            document.getElementById("lat").value = lat;
-            document.getElementById("lon").value = lon;
-          },
-          function (error) {
-            alert("No se pudo obtener la ubicación: " + error.message);
-          }
-        );
-      } else {
-        alert("Geolocalización no soportada en este navegador.");
-      }
-    </script>
 
     {% if form.errors %}
     <p>Hubo algunos errores en el formulario. Por favor, revisa los campos.</p>
