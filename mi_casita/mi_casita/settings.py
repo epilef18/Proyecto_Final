@@ -102,7 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LOGIN_REDIRECT_URL = "/"  # para el futuro no cercano agrega el home
-LOGOUT_REDIRECT_URL = "/login/"
+LOGOUT_REDIRECT_URL = "/logout/"
 LOGIN_URL = "/login/"
 
 # Internationalization
