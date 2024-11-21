@@ -41,34 +41,27 @@
             <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/welcome">Welcome</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact</a>
-            </li>
           </ul>
           <ul class="navbar-nav ms-auto">
             {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="#">Bienvenido, {{ user.username }}</a>
             </li>
-            <form action="" method="post">
+            {% block Logoutblock %}
+            <form action="{% url 'logout' %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn btn-danger">
+              <button type="submit" class="btn btn-danger" value="logout">
                 Cerrar sesión
               </button>
             </form>
+            {% endblock %}
 
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="">Iniciar Sesión</a>
+              <a class="nav-link" href="/login">Iniciar Sesión</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Registrarse</a>
+              <a class="nav-link" href="/registro">Registrarse</a>
             </li>
             {% endif %}
           </ul>
