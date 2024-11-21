@@ -1,0 +1,291 @@
+[
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 1,
+    "fields": {
+      "nombre": "Moderno Departamento en Providencia",
+      "descripcion": "Departamento nuevo con vista panorámica a la ciudad.",
+      "m2_construidos": 75.0,
+      "m2_totales": 75.0,
+      "estacionamientos": 1,
+      "habitaciones": 2,
+      "banos": 2,
+      "direccion": "Avenida Apoquindo 567",
+      "comuna": "Providencia",
+      "tipo_inmueble": "departamento",
+      "precio_mensual": 900000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 2,
+    "fields": {
+      "nombre": "Parcela con Vista al Mar",
+      "descripcion": "Amplia parcela con acceso directo a la playa.",
+      "m2_construidos": 150.0,
+      "m2_totales": 5000.0,
+      "estacionamientos": 3,
+      "habitaciones": 3,
+      "banos": 2,
+      "direccion": "Camino a la Playa 890",
+      "comuna": "Viña del Mar",
+      "tipo_inmueble": "parcela",
+      "precio_mensual": 2000000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 3,
+    "fields": {
+      "nombre": "Casa Familiar en La Florida",
+      "descripcion": "Casa espaciosa con jardín y piscina.",
+      "m2_construidos": 120.0,
+      "m2_totales": 300.0,
+      "estacionamientos": 2,
+      "habitaciones": 4,
+      "banos": 3,
+      "direccion": "Calle Los Almendros 123",
+      "comuna": "La Florida",
+      "tipo_inmueble": "casa",
+      "precio_mensual": 1200000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 4,
+    "fields": {
+      "nombre": "Departamento en Santiago Centro",
+      "descripcion": "Departamento moderno en el corazón de la ciudad.",
+      "m2_construidos": 65.0,
+      "m2_totales": 65.0,
+      "estacionamientos": 1,
+      "habitaciones": 1,
+      "banos": 1,
+      "direccion": "Avenida Libertador 456",
+      "comuna": "Santiago",
+      "tipo_inmueble": "departamento",
+      "precio_mensual": 750000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 5,
+    "fields": {
+      "nombre": "Parcela en Cajón del Maipo",
+      "descripcion": "Parcela rodeada de naturaleza y tranquilidad.",
+      "m2_construidos": 100.0,
+      "m2_totales": 2000.0,
+      "estacionamientos": 2,
+      "habitaciones": 2,
+      "banos": 1,
+      "direccion": "Camino El Ingenio 456",
+      "comuna": "Cajón del Maipo",
+      "tipo_inmueble": "parcela",
+      "precio_mensual": 800000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 6,
+    "fields": {
+      "nombre": "Casa en Peñalolén",
+      "descripcion": "Casa con amplio terreno y excelente ubicación.",
+      "m2_construidos": 150.0,
+      "m2_totales": 400.0,
+      "estacionamientos": 2,
+      "habitaciones": 5,
+      "banos": 3,
+      "direccion": "Avenida Peñalolén 789",
+      "comuna": "Peñalolén",
+      "tipo_inmueble": "casa",
+      "precio_mensual": 1400000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 7,
+    "fields": {
+      "nombre": "Departamento en Las Condes",
+      "descripcion": "Elegante departamento en una de las mejores zonas.",
+      "m2_construidos": 90.0,
+      "m2_totales": 90.0,
+      "estacionamientos": 1,
+      "habitaciones": 3,
+      "banos": 2,
+      "direccion": "Avenida Apoquindo 1234",
+      "comuna": "Las Condes",
+      "tipo_inmueble": "departamento",
+      "precio_mensual": 1500000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 8,
+    "fields": {
+      "nombre": "Casa en Vitacura",
+      "descripcion": "Casa moderna con acabados de lujo.",
+      "m2_construidos": 200.0,
+      "m2_totales": 500.0,
+      "estacionamientos": 3,
+      "habitaciones": 4,
+      "banos": 4,
+      "direccion": "Calle La Cañada 234",
+      "comuna": "Vitacura",
+      "tipo_inmueble": "casa",
+      "precio_mensual": 3000000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 9,
+    "fields": {
+      "nombre": "Parcela en Rancagua",
+      "descripcion": "Parcela con árboles frutales y espacio para construir.",
+      "m2_construidos": 50.0,
+      "m2_totales": 10000.0,
+      "estacionamientos": 1,
+      "habitaciones": 1,
+      "banos": 1,
+      "direccion": "Ruta 5 Sur 12345",
+      "comuna": "Rancagua",
+      "tipo_inmueble": "parcela",
+      "precio_mensual": 500000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 10,
+    "fields": {
+      "nombre": "Departamento en Ñuñoa",
+      "descripcion": "Departamento acogedor con buena conectividad.",
+      "m2_construidos": 70.0,
+      "m2_totales": 70.0,
+      "estacionamientos": 1,
+      "habitaciones": 2,
+      "banos": 1,
+      "direccion": "Calle Ramón Cruz 789",
+      "comuna": "Ñuñoa",
+      "tipo_inmueble": "departamento",
+      "precio_mensual": 850000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 11,
+    "fields": {
+      "nombre": "Casa en La Reina",
+      "descripcion": "Casa con gran jardín y piscina.",
+      "m2_construidos": 180.0,
+      "m2_totales": 600.0,
+      "estacionamientos": 2,
+      "habitaciones": 4,
+      "banos": 3,
+      "direccion": "Calle La Reina 456",
+      "comuna": "La Reina",
+      "tipo_inmueble": "casa",
+      "precio_mensual": 1600000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 12,
+    "fields": {
+      "nombre": "Parcela en San Fernando",
+      "descripcion": "Parcela ideal para descanso y actividades al aire libre.",
+      "m2_construidos": 0.0,
+      "m2_totales": 15000.0,
+      "estacionamientos": 2,
+      "habitaciones": 0,
+      "banos": 0,
+      "direccion": "Camino a la Libertad 123",
+      "comuna": "San Fernando",
+      "tipo_inmueble": "parcela",
+      "precio_mensual": 300000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 13,
+    "fields": {
+      "nombre": "Departamento en Concepción",
+      "descripcion": "Departamento en zona céntrica con buena vista.",
+      "m2_construidos": 80.0,
+      "m2_totales": 80.0,
+      "estacionamientos": 1,
+      "habitaciones": 2,
+      "banos": 1,
+      "direccion": "Calle O'Higgins 321",
+      "comuna": "Concepción",
+      "tipo_inmueble": "departamento",
+      "precio_mensual": 700000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 14,
+    "fields": {
+      "nombre": "Casa en Talagante",
+      "descripcion": "Casa con amplio terreno y posibilidad de expansión.",
+      "m2_construidos": 160.0,
+      "m2_totales": 500.0,
+      "estacionamientos": 2,
+      "habitaciones": 4,
+      "banos": 2,
+      "direccion": "Calle Talagante 789",
+      "comuna": "Talagante",
+      "tipo_inmueble": "casa",
+      "precio_mensual": 1100000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 15,
+    "fields": {
+      "nombre": "Departamento en La Serena",
+      "descripcion": "Departamento con vista al mar y cerca de la playa.",
+      "m2_construidos": 75.0,
+      "m2_totales": 75.0,
+      "estacionamientos": 1,
+      "habitaciones": 2,
+      "banos": 2,
+      "direccion": "Avenida del Mar 456",
+      "comuna": "La Serena",
+      "tipo_inmueble": "departamento",
+      "precio_mensual": 950000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 16,
+    "fields": {
+      "nombre": "Casa en Pudahuel",
+      "descripcion": "Casa en sector tranquilo, ideal para familias.",
+      "m2_construidos": 140.0,
+      "m2_totales": 350.0,
+      "estacionamientos": 2,
+      "habitaciones": 3,
+      "banos": 2,
+      "direccion": "Calle Los Eucaliptus 123",
+      "comuna": "Pudahuel",
+      "tipo_inmueble": "casa",
+      "precio_mensual": 1300000.0
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 17,
+    "fields": {
+      "nombre": "Parcela en Quilpué",
+      "descripcion": "Parcela con acceso a río y naturaleza.",
+      "m2_construidos": 0.0,
+      "m2_totales": 12000.0,
+      "estacionamientos": 1,
+      "habitaciones": 0,
+      "banos": 0,
+      "direccion": "Calle del Río 456",
+      "comuna": "Quilpué",
+      "tipo_inmueble": "parcela",
+      "precio_mensual": 400000.0
+    }
+  }
+]
