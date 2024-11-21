@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %}Iniciar Sesión - Mi Casita
+{%endblock%} {% block content %}
+<div class="container mt-5">
+  <h1 class="text-center">Iniciar Sesión</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form method="POST" class="mt-4 p-4 border rounded">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+      </form>
+      {% if form.errors %}
+      <div class="alert alert-danger mt-3">
+        <p>
+          Hubo un error en el formulario. Por favor, revisa tus credenciales.
+        </p>
+      </div>
+      {% endif %}
+      <div class="text-center mt-3">
+        <p>¿No tienes una cuenta? <a href="/registro/">Regístrate aquí</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
