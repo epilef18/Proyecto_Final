@@ -1,4 +1,17 @@
-{% extends 'base.html' %} {% block title %} Mi Casita - Home {% endblock %} 
+{% extends 'base.html' %}
+<!---->
+{% block title %} Mi Casita - Home {% endblock %}
+<!---->
 {% block content %}
 <h1 class="text-center">Bienvenido a Mi Casita!</h1>
+<ul>
+  {% for region in regions %}
+  <li>
+    <a href="{% url 'lista_inmuebles_por_region' region.id %}"
+      >{{ region.nombre }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+<!---->
 {% endblock %}

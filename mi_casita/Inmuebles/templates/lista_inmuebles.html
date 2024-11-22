@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block title %} Mi Casita - Inmuebles {% endblock %}
+{% block content %}
+<h1>Inmuebles en {{ region.nombre }}</h1>
+
+<ul>
+  {% for inmueble in inmuebles %}
+  <li>{{ inmueble.nombre }}</li>
+  {% empty %}
+  <li>No hay inmuebles disponibles en esta región.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
