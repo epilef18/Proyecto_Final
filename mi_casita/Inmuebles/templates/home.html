@@ -1,17 +1,28 @@
-{% extends 'base.html' %}
-<!---->
-{% block title %} Mi Casita - Home {% endblock %}
-<!---->
-{% block content %}
-<h1 class="text-center">Bienvenido a Mi Casita!</h1>
-<ul>
-  {% for region in regions %}
-  <li>
-    <a href="{% url 'lista_inmuebles_por_region' region.id %}"
-      >{{ region.nombre }}</a
-    >
-  </li>
-  {% endfor %}
-</ul>
-<!---->
+{% extends 'base.html' %} {% load static %} {% block title %} Mi Casita - Home
+{% endblock %} {% block content %}
+<div class="container mt-4">
+  <h1 class="text-center">Bienvenido a Mi Casita!</h1>
+  <div class="row">
+    {% for region in regions %}
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <img
+          src="{% static 'img/' %}{{ region.nombre|slugify }}.jpg"
+          class="card-img-top img-fluid"
+          alt="Imagen de {{ region.nombre }}"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ region.nombre }}</h5>
+          <a
+            href="{% url 'lista_inmuebles_por_region' region.id %}"
+            class="btn btn-primary"
+          >
+            Ver inmuebles
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
