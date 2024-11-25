@@ -33,3 +33,8 @@ def lista_inmuebles_por_region(request, region_id):
         "lista_inmuebles.html",
         {"inmuebles": inmuebles, "region": region},
     )
+
+
+def detalle_inmueble(request, id):
+    inmueble = get_object_or_404(Inmueble, id=id)
+    return render(request, "detalle_inmueble.html", {"inmueble": inmueble})
