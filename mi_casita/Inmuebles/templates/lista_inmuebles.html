@@ -2,11 +2,30 @@
 {% block content %}
 <h1>Inmuebles en {{ region.nombre }}</h1>
 
-<ul>
+<ul class="row">
   {% for inmueble in inmuebles %}
-  <li>{{ inmueble.nombre }}</li>
+  <li class="col-md-4 mb-3">
+    <div class="card">
+      <!-- Imagen del inmueble -->
+      <img
+        src="{{ inmueble.imagen.url }}"
+        class="card-img-top"
+        alt="{{ inmueble.nombre }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ inmueble.nombre }}</h5>
+        <p class="card-text">Precio: {{ inmueble.precio }} CLP</p>
+        <p class="card-text">{{ inmueble.descripcion }}</p>
+        <a
+          href="{% url 'detalle_inmueble' inmueble.id %}"
+          class="btn btn-primary"
+          >Ver detalles</a
+        >
+      </div>
+    </div>
+  </li>
   {% empty %}
-  <li>No hay inmuebles disponibles en esta región.</li>
+  <li class="col-12">No hay inmuebles disponibles en esta región.</li>
   {% endfor %}
 </ul>
 {% endblock %}

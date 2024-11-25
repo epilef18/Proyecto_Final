@@ -1,7 +1,13 @@
 from django.contrib import admin
 from django.urls import path
-from Inmuebles.views import registro_usuario, home, lista_inmuebles_por_region
+from Inmuebles.views import (
+    registro_usuario,
+    home,
+    lista_inmuebles_por_region,
+    detalle_inmueble,
+)
 from django.contrib.auth.views import LoginView, LogoutView
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -14,4 +20,5 @@ urlpatterns = [
         lista_inmuebles_por_region,
         name="lista_inmuebles_por_region",
     ),
+    path("inmueble/<int:id>/", detalle_inmueble, name="detalle_inmueble"),
 ]
