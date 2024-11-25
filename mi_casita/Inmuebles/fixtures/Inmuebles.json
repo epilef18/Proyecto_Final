@@ -14,7 +14,9 @@
       "comuna": "Providencia",
       "region": "16",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 900000.0
+      "precio_mensual": 900000.0,
+      "imagen_inmueble": "inmuebles/deptoprovi.webp"
+      
     }
   },
   {
@@ -32,7 +34,8 @@
       "comuna": "Viña del Mar",
       "region": "6",
       "tipo_inmueble": "parcela",
-      "precio_mensual": 2000000.0
+      "precio_mensual": 2000000.0,
+      "imagen_inmueble": "inmuebles/parcelavinadelmar.jpg"
     }
   },
   {
@@ -50,7 +53,8 @@
       "comuna": "La Florida",
       "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 1200000.0
+      "precio_mensual": 1200000.0,
+      "imagen_inmueble": "inmuebles/casalaflor.webp"
     }
   },
   {
@@ -68,7 +72,8 @@
       "comuna": "Santiago",
       "region": "16",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 750000.0
+      "precio_mensual": 750000.0,
+      "imagen_inmueble": "inmuebles/deptostgocentro.jpg"
     }
   },
   {
@@ -86,7 +91,8 @@
       "comuna": "Cajón del Maipo",
       "region": "16",
       "tipo_inmueble": "parcela",
-      "precio_mensual": 800000.0
+      "precio_mensual": 800000.0,
+      "imagen_inmueble": "inmuebles/parcelacajonmaipo.webp"
     }
   },
   {
@@ -104,7 +110,8 @@
       "comuna": "Peñalolén",
       "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 1400000.0
+      "precio_mensual": 1400000.0,
+      "imagen_inmueble": "inmuebles/casapeñalolen.jpg"
     }
   },
   {
@@ -122,7 +129,8 @@
       "comuna": "Las Condes",
       "region": "16",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 1500000.0
+      "precio_mensual": 1500000.0,
+      "imagen_inmueble": "inmuebles/casalascondes.jpeg"
     }
   },
   {
@@ -140,7 +148,8 @@
       "comuna": "Vitacura",
       "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 3000000.0
+      "precio_mensual": 3000000.0,
+      "imagen_inmueble": "inmuebles/casavitacura.jpg"
     }
   },
   {
@@ -158,7 +167,8 @@
       "comuna": "Rancagua",
       "region": "7",
       "tipo_inmueble": "parcela",
-      "precio_mensual": 500000.0
+      "precio_mensual": 500000.0,
+      "imagen_inmueble": "inmuebles/parcelarancagua.jpeg"
     }
   },
   {
@@ -176,7 +186,8 @@
       "comuna": "Ñuñoa",
       "region": "16",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 850000.0
+      "precio_mensual": 850000.0,
+      "imagen_inmueble": "inmuebles/casanunoa.jpg"
     }
   },
   {
@@ -194,7 +205,8 @@
       "comuna": "La Reina",
       "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 1600000.0
+      "precio_mensual": 1600000.0,
+      "imagen_inmueble": "inmuebles/casalareina.webp"
     }
   },
   {
@@ -212,7 +224,8 @@
       "comuna": "San Fernando",
       "region": "7",
       "tipo_inmueble": "parcela",
-      "precio_mensual": 300000.0
+      "precio_mensual": 300000.0,
+      "imagen_inmueble": "inmuebles/parcelasanfer.webp"
     }
   },
   {
@@ -230,7 +243,8 @@
       "comuna": "Concepción",
       "region": "10",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 700000.0
+      "precio_mensual": 700000.0,
+      "imagen_inmueble": "inmuebles/deptoconce.jpg"
     }
   },
   {
@@ -248,7 +262,8 @@
       "comuna": "Talagante",
       "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 1100000.0
+      "precio_mensual": 1100000.0,
+      "imagen_inmueble": "inmuebles/casatalagante.jpg"
     }
   },
   {
@@ -266,7 +281,8 @@
       "comuna": "La Serena",
       "region": "5",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 950000.0
+      "precio_mensual": 950000.0,
+      "imagen_inmueble": "inmuebles/deptols.jpg"
     }
   },
   {
@@ -284,7 +300,8 @@
       "comuna": "Pudahuel",
       "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 1300000.0
+      "precio_mensual": 1300000.0,
+      "imagen_inmueble": "inmuebles/casapudahuel.webp"
     }
   },
   {
@@ -302,7 +319,8 @@
       "comuna": "Quilpué",
       "region": "6",
       "tipo_inmueble": "parcela",
-      "precio_mensual": 400000.0
+      "precio_mensual": 400000.0,
+      "imagen_inmueble": "inmuebles/parcelaquilpue.webp"
     }
   },
   {
@@ -320,7 +338,8 @@
       "comuna": "Punta Arenas",
       "region": "15",
       "tipo_inmueble": "casa",
-      "precio_mensual": 1400000.0
+      "precio_mensual": 1400000.0,
+      "imagen_inmueble": "inmuebles/casapuntarenas.webp"
     }
   },
   {
@@ -338,7 +357,8 @@
       "comuna": "Coyhaique",
       "region": "14",
       "tipo_inmueble": "cabaña",
-      "precio_mensual": 600000.0
+      "precio_mensual": 600000.0,
+      "imagen_inmueble": "inmuebles/cabañacoyhaique.jpg"
     }
   },
   {
@@ -356,7 +376,8 @@
       "comuna": "Valdivia",
       "region": "12",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 900000.0
+      "precio_mensual": 900000.0,
+      "imagen_inmueble": "inmuebles/deptovaldivia.jpg"
     }
   }
 ]
