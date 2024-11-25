@@ -5,20 +5,19 @@
   <div class="row">
     {% for region in regions %}
     <div class="col-md-6 mb-4">
-      <div class="card">
+      <div class="view overlay">
+        <a
+            href="{% url 'lista_inmuebles_por_region' region.id %}"
+          >
         <img
-          src="{% static 'img/' %}{{ region.nombre|slugify }}.jpg"
-          class="card-img-top img-fluid"
+          src="{{ region.imagen_region.url }}"
+          class="card-img-top h-100"
           alt="Imagen de {{ region.nombre }}"
         />
+        </a>
+      
         <div class="card-body text-center">
           <h5 class="card-title">{{ region.nombre }}</h5>
-          <a
-            href="{% url 'lista_inmuebles_por_region' region.id %}"
-            class="btn btn-primary"
-          >
-            Ver inmuebles
-          </a>
         </div>
       </div>
     </div>

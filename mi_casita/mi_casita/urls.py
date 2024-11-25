@@ -7,6 +7,8 @@ from Inmuebles.views import (
     detalle_inmueble,
 )
 from django.contrib.auth.views import LoginView, LogoutView
+from django.conf.urls.static import static
+from . import settings
 
 
 urlpatterns = [
@@ -22,3 +24,6 @@ urlpatterns = [
     ),
     path("inmueble/<int:id>/", detalle_inmueble, name="detalle_inmueble"),
 ]
+
+urlpatterns += static(
+    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

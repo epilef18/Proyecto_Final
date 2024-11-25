@@ -1,0 +1,9 @@
+.img{
+    display: block;
+    width: 600px;
+    height: 300px;
+    object-fit: cover;
+}
+body{
+    background-color: coral;
+}

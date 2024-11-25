@@ -8,13 +8,13 @@
     <div class="card">
       <!-- Imagen del inmueble -->
       <img
-        src="{{ inmueble.imagen.url }}"
+        src="{{ inmueble.imagen_inmueble.url }}"
         class="card-img-top"
         alt="{{ inmueble.nombre }}"
       />
       <div class="card-body">
         <h5 class="card-title">{{ inmueble.nombre }}</h5>
-        <p class="card-text">Precio: {{ inmueble.precio }} CLP</p>
+        <p class="card-text">Precio: {{ inmueble.precio_mensual }} CLP</p>
         <p class="card-text">{{ inmueble.descripcion }}</p>
         <a
           href="{% url 'detalle_inmueble' inmueble.id %}"

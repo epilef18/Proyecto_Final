@@ -9,7 +9,7 @@
           <!-- Imagen del inmueble -->
           <div class="col-md-5">
             <img
-              src="{{ inmueble.imagen.url }}"
+              src="{{ inmueble.imagen_inmueble.url }}"
               class="img-fluid rounded-start"
               alt="{{ inmueble.nombre }}"
             />
@@ -22,7 +22,7 @@
                 <strong>Descripción:</strong> {{ inmueble.descripcion }}
               </p>
               <h4 class="text-success">
-                Precio: {{ inmueble.precio|floatformat:2 }} CLP
+                Precio: {{ inmueble.precio_mensual|floatformat:2 }} CLP
               </h4>
               <hr />
               <ul class="list-unstyled">
