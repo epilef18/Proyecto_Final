@@ -44,7 +44,9 @@
           <ul class="navbar-nav ms-auto">
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="#">Bienvenido, {{ user.username }}</a>
+              <a class="nav-link" href="/perfil"
+                >Bienvenido, {{ user.username }}</a
+              >
             </li>
             {% block Logoutblock %}
             <form action="{% url 'logout' %}" method="post">
@@ -53,9 +55,7 @@
                 Cerrar sesión
               </button>
             </form>
-            {% endblock %}
-
-            {% else %}
+            {% endblock %} {% else %}
             <li class="nav-item">
               <a class="nav-link" href="/login">Iniciar Sesión</a>
             </li>
