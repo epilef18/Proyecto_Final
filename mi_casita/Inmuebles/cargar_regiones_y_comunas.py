@@ -9,11 +9,11 @@ data = {
         {
             "regiones": [
                 {
-                    "region": "Arica y Parinacota",
+                    "region": "Región de Arica y Parinacota",
                     "comunas": ["Arica", "Camarones", "Putre", "General Lagos"],
                 },
                 {
-                    "region": "Tarapacá",
+                    "region": "Región de Tarapacá",
                     "comunas": [
                         "Iquique",
                         "Alto Hospicio",
@@ -25,7 +25,7 @@ data = {
                     ],
                 },
                 {
-                    "region": "Antofagasta",
+                    "region": "Región de Antofagasta",
                     "comunas": [
                         "Antofagasta",
                         "Mejillones",
@@ -39,7 +39,7 @@ data = {
                     ],
                 },
                 {
-                    "region": "Atacama",
+                    "region": "Región de Atacama",
                     "comunas": [
                         "Copiapó",
                         "Caldera",
@@ -53,7 +53,7 @@ data = {
                     ],
                 },
                 {
-                    "region": "Coquimbo",
+                    "region": "Región de Coquimbo",
                     "comunas": [
                         "La Serena",
                         "Coquimbo",
@@ -73,7 +73,7 @@ data = {
                     ],
                 },
                 {
-                    "region": "Valparaíso",
+                    "region": "Región de Valparaíso",
                     "comunas": [
                         "Valparaíso",
                         "Casablanca",
@@ -189,7 +189,7 @@ data = {
                     ],
                 },
                 {
-                    "region": "Región de Ñuble",
+                    "region": "Región del Ñuble",
                     "comunas": [
                         "Cobquecura",
                         "Coelemu",

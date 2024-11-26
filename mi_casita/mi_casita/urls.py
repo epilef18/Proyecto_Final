@@ -1,28 +1,54 @@
-"""
-URL configuration for mi_casita project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-
 from django.contrib import admin
 from django.urls import path
-from Inmuebles.views import registro_usuario
+from Inmuebles.views import (
+    perfil_usuario,
+    registro_usuario,
+    home,
+    lista_inmuebles_por_region,
+    detalle_inmueble,
+    MiInmueblesListView,
+    MiInmueblesDetailView,
+    MiInmueblesCreateView,
+    MiInmueblesUpdateView,
+    MiInmueblesDeleteView,
+)
 from django.contrib.auth.views import LoginView, LogoutView
+from django.conf.urls.static import static
+from . import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("registro/", registro_usuario, name="registro"),
     path("login/", LoginView.as_view(template_name="login.html"), name="login"),
-    path("logout/", LogoutView.as_view(), name="logout"),
+    path("logout/", LogoutView.as_view(template_name="logout.html"), name="logout"),
+    path("", home, name="home"),
+    path(
+        "region/<int:region_id>/inmuebles/",
+        lista_inmuebles_por_region,
+        name="lista_inmuebles_por_region",
+    ),
+    path(
+        "inmueble/user/<int:pk>/",
+        MiInmueblesDetailView.as_view(),
+        name="vista_inmueble",
+    ),
+    path("inmuebles/", MiInmueblesListView.as_view(), name="inmuebles_list"),
+    path("inmuebles/nuevo/", MiInmueblesCreateView.as_view(), name="inmueble_creacion"),
+    path(
+        "inmuebles/<int:pk>/editar/",
+        MiInmueblesUpdateView.as_view(),
+        name="inmueble_form",
+    ),
+    path(
+        "inmuebles/<int:pk>/eliminar/",
+        MiInmueblesDeleteView.as_view(),
+        name="inmueble_eliminar",
+    ),
+    path("inmueble/<int:id>/", detalle_inmueble, name="detalle_inmueble"),
+    path("perfil/", perfil_usuario, name="perfil_usuario"),
 ]
+
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4">Perfil de Usuario</h2>
+  <div class="card">
+    <div class="card-header">
+      <h4>{{ user.username }}</h4>
+    </div>
+    <div class="card-body">
+      <div class="row mb-3">
+        <div class="col-md-3"><strong>Tipo de Usuario:</strong></div>
+        <div class="col-md-9">{{ perfil.tipo_usuario }}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-3"><strong>Dirección:</strong></div>
+        <div class="col-md-9">{{ perfil.direccion }}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-3"><strong>Comuna:</strong></div>
+        <div class="col-md-9">{{ perfil.comuna.nombre }}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-3"><strong>Región:</strong></div>
+        <div class="col-md-9">{{ perfil.region.nombre }}</div>
+      </div>
+    </div>
+    <div class="card-footer">falta aca el boton de editar me dio paja</div>
+  </div>
+</div>
+{% endblock %}

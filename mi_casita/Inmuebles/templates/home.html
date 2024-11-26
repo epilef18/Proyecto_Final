@@ -1,0 +1,29 @@
+{% extends 'base.html' %}{% block title %} Mi Casita - Home
+{% endblock %} {% block content %}
+{% load static %}
+<div class="container mt-4">
+  <h1 class="text-center mb-5">Bienvenido a Mi Casita!</h1>
+  <h6 class="text-center mb-2">Explora las propiedades que manejamos a lo largo de todo Chile!</h3>
+  <div class="row">
+    {% for region in regions %}
+    <div class="col-md-3 mb-2">
+      <div class="view overlay">
+        <a
+            href="{% url 'lista_inmuebles_por_region' region.id %}"
+          >
+        <img
+          src="{% static 'img/' %}{{ region.nombre|slugify }}.jpg"
+          class="card-img-top"
+          alt="Imagen de {{ region.nombre }}"
+        />
+        </a>
+      
+        <div class="card-text text-center">
+          <h7 class="card-title">{{ region.nombre }}</h7>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

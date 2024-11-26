@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block title %} Mi Casita - Inmuebles {% endblock %}
+{% block content %}
+<h1>Inmuebles en {{ region.nombre }}</h1>
+
+<ul class="row">
+  {% for inmueble in inmuebles %}
+  <li class="col-md-4 mb-3">
+    <div class="card h-100">
+      <!-- Imagen del inmueble -->
+      <a href="{% url 'detalle_inmueble' inmueble.id %}">
+        <img
+          src="{{ inmueble.imagen_inmueble.url }}"
+          class="card-img-top"
+          alt="{{ inmueble.nombre }}"
+      /></a>
+      <div class="card-body">
+        <h6 class="card-title">{{ inmueble.nombre }}</h6>
+        <h5 class="text-success">Precio: {{ inmueble.precio_mensual }} CLP</h5>
+        <p class="card-text">{{ inmueble.descripcion }}</p>
+      </div>
+    </div>
+  </li>
+  {% empty %}
+  <li class="col-12">No hay inmuebles disponibles en esta región.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

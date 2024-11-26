@@ -1,0 +1,18 @@
+.card-img-top {
+    display: block;
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+}
+.card-precio{
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+.navbar{
+    background-color: #e59572;
+}
+.card-body{
+    background-color: #fdc4b6;
+}
+body {
+    background-color: #4dbedf;
+}

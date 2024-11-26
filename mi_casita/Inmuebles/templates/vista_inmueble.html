@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-5">
+  <h1 class="text-center">{{ object.nombre }}</h1>
+  <div class="text-center">
+    <img
+      src="{{ object.imagen_inmueble.url }}"
+      alt="{{ object.nombre }}"
+      class="img-fluid"
+    />
+  </div>
+  <p class="lead">{{ object.descripcion }}</p>
+  <p><strong>Metros Construidos:</strong> {{ object.m2_construidos }}</p>
+  <p><strong>Metros Totales:</strong> {{ object.m2_totales }}</p>
+  <p><strong>Estacionamientos:</strong> {{ object.estacionamientos }}</p>
+  <p><strong>Habitaciones:</strong> {{ object.habitaciones }}</p>
+  <p><strong>Baños:</strong> {{ object.banos }}</p>
+  <p><strong>Dirección:</strong> {{ object.direccion }}</p>
+  <p><strong>Comuna:</strong> {{ object.comuna }}</p>
+  <p><strong>Tipo de Inmueble:</strong> {{ object.tipo_inmueble }}</p>
+  <p><strong>Precio Mensual:</strong> {{ object.precio_mensual }}</p>
+  <p><strong>Región:</strong> {{ object.region.nombre }}</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a
+      href="{% url 'inmueble_form' object.id %}"
+      class="btn btn-warning me-md-2"
+      >Editar</a
+    >
+    <a
+      href="{% url 'inmueble_eliminar' object.id %}"
+      class="btn btn-danger me-md-2"
+      >Eliminar</a
+    >
+    <a href="{% url 'inmuebles_list' %}" class="btn btn-secondary"
+      >Volver a la lista</a
+    >
+  </div>
+</div>
+{% endblock %}

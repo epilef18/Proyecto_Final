@@ -12,8 +12,11 @@
       "banos": 2,
       "direccion": "Avenida Apoquindo 567",
       "comuna": "Providencia",
+      "region": "16",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 900000.0
+      "precio_mensual": 900000.0,
+      "usuario": 8,
+      "imagen_inmueble": "inmuebles/deptoprovi.webp"
     }
   },
   {
@@ -29,8 +32,11 @@
       "banos": 2,
       "direccion": "Camino a la Playa 890",
       "comuna": "Viña del Mar",
+      "region": "6",
       "tipo_inmueble": "parcela",
-      "precio_mensual": 2000000.0
+      "precio_mensual": 2000000.0,
+      "usuario": 5,
+      "imagen_inmueble": "inmuebles/parcelavinadelmar.jpg"
     }
   },
   {
@@ -46,8 +52,11 @@
       "banos": 3,
       "direccion": "Calle Los Almendros 123",
       "comuna": "La Florida",
+      "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 1200000.0
+      "precio_mensual": 1200000.0,
+      "usuario": 7,
+      "imagen_inmueble": "inmuebles/casalaflor.webp"
     }
   },
   {
@@ -63,8 +72,11 @@
       "banos": 1,
       "direccion": "Avenida Libertador 456",
       "comuna": "Santiago",
+      "region": "16",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 750000.0
+      "precio_mensual": 750000.0,
+      "usuario": 9,
+      "imagen_inmueble": "inmuebles/deptostgocentro.jpg"
     }
   },
   {
@@ -80,8 +92,11 @@
       "banos": 1,
       "direccion": "Camino El Ingenio 456",
       "comuna": "Cajón del Maipo",
+      "region": "16",
       "tipo_inmueble": "parcela",
-      "precio_mensual": 800000.0
+      "precio_mensual": 800000.0,
+      "usuario": 3,
+      "imagen_inmueble": "inmuebles/parcelacajonmaipo.webp"
     }
   },
   {
@@ -97,8 +112,11 @@
       "banos": 3,
       "direccion": "Avenida Peñalolén 789",
       "comuna": "Peñalolén",
+      "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 1400000.0
+      "precio_mensual": 1400000.0,
+      "usuario": 1,
+      "imagen_inmueble": "inmuebles/casapeñalolen.jpg"
     }
   },
   {
@@ -114,8 +132,11 @@
       "banos": 2,
       "direccion": "Avenida Apoquindo 1234",
       "comuna": "Las Condes",
+      "region": "16",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 1500000.0
+      "precio_mensual": 1500000.0,
+      "usuario": 2,
+      "imagen_inmueble": "inmuebles/casalascondes.jpeg"
     }
   },
   {
@@ -131,8 +152,11 @@
       "banos": 4,
       "direccion": "Calle La Cañada 234",
       "comuna": "Vitacura",
+      "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 3000000.0
+      "precio_mensual": 3000000.0,
+      "usuario": 8,
+      "imagen_inmueble": "inmuebles/casavitacura.jpg"
     }
   },
   {
@@ -148,8 +172,11 @@
       "banos": 1,
       "direccion": "Ruta 5 Sur 12345",
       "comuna": "Rancagua",
+      "region": "7",
       "tipo_inmueble": "parcela",
-      "precio_mensual": 500000.0
+      "precio_mensual": 500000.0,
+      "usuario": 6,
+      "imagen_inmueble": "inmuebles/parcelarancagua.jpeg"
     }
   },
   {
@@ -165,8 +192,11 @@
       "banos": 1,
       "direccion": "Calle Ramón Cruz 789",
       "comuna": "Ñuñoa",
+      "region": "16",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 850000.0
+      "precio_mensual": 850000.0,
+      "usuario": 4,
+      "imagen_inmueble": "inmuebles/casanunoa.jpg"
     }
   },
   {
@@ -182,8 +212,11 @@
       "banos": 3,
       "direccion": "Calle La Reina 456",
       "comuna": "La Reina",
+      "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 1600000.0
+      "precio_mensual": 1600000.0,
+      "usuario": 7,
+      "imagen_inmueble": "inmuebles/casalareina.webp"
     }
   },
   {
@@ -199,8 +232,11 @@
       "banos": 0,
       "direccion": "Camino a la Libertad 123",
       "comuna": "San Fernando",
+      "region": "7",
       "tipo_inmueble": "parcela",
-      "precio_mensual": 300000.0
+      "precio_mensual": 300000.0,
+      "usuario": 7,
+      "imagen_inmueble": "inmuebles/parcelasanfer.webp"
     }
   },
   {
@@ -216,8 +252,11 @@
       "banos": 1,
       "direccion": "Calle O'Higgins 321",
       "comuna": "Concepción",
+      "region": "10",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 700000.0
+      "precio_mensual": 700000.0,
+      "usuario": 7,
+      "imagen_inmueble": "inmuebles/deptoconce.jpg"
     }
   },
   {
@@ -233,8 +272,11 @@
       "banos": 2,
       "direccion": "Calle Talagante 789",
       "comuna": "Talagante",
+      "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 1100000.0
+      "precio_mensual": 1100000.0,
+      "usuario": 3,
+      "imagen_inmueble": "inmuebles/casatalagante.jpg"
     }
   },
   {
@@ -250,8 +292,11 @@
       "banos": 2,
       "direccion": "Avenida del Mar 456",
       "comuna": "La Serena",
+      "region": "5",
       "tipo_inmueble": "departamento",
-      "precio_mensual": 950000.0
+      "precio_mensual": 950000.0,
+      "usuario": 9,
+      "imagen_inmueble": "inmuebles/deptols.jpg"
     }
   },
   {
@@ -267,8 +312,11 @@
       "banos": 2,
       "direccion": "Calle Los Eucaliptus 123",
       "comuna": "Pudahuel",
+      "region": "16",
       "tipo_inmueble": "casa",
-      "precio_mensual": 1300000.0
+      "precio_mensual": 1300000.0,
+      "usuario": 9,
+      "imagen_inmueble": "inmuebles/casapudahuel.webp"
     }
   },
   {
@@ -284,8 +332,71 @@
       "banos": 0,
       "direccion": "Calle del Río 456",
       "comuna": "Quilpué",
+      "region": "6",
       "tipo_inmueble": "parcela",
-      "precio_mensual": 400000.0
+      "precio_mensual": 400000.0,
+      "usuario": 9,
+      "imagen_inmueble": "inmuebles/parcelaquilpue.webp"
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 18,
+    "fields": {
+      "nombre": "Casa en Punta Arenas",
+      "descripcion": "Casa con calefacción central y diseño especial para el frío.",
+      "m2_construidos": 120.0,
+      "m2_totales": 300.0,
+      "estacionamientos": 2,
+      "habitaciones": 3,
+      "banos": 2,
+      "direccion": "Calle Magallanes 789",
+      "comuna": "Punta Arenas",
+      "region": "15",
+      "tipo_inmueble": "casa",
+      "precio_mensual": 1400000.0,
+      "usuario": 3,
+      "imagen_inmueble": "inmuebles/casapuntarenas.webp"
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 19,
+    "fields": {
+      "nombre": "Cabaña en Coyhaique",
+      "descripcion": "Acogedora cabaña rodeada de bosques y naturaleza.",
+      "m2_construidos": 70.0,
+      "m2_totales": 500.0,
+      "estacionamientos": 1,
+      "habitaciones": 2,
+      "banos": 1,
+      "direccion": "Ruta Austral 567",
+      "comuna": "Coyhaique",
+      "region": "14",
+      "tipo_inmueble": "cabaña",
+      "precio_mensual": 600000.0,
+      "usuario": 2,
+      "imagen_inmueble": "inmuebles/cabañacoyhaique.jpg"
+    }
+  },
+  {
+    "model": "Inmuebles.Inmueble",
+    "pk": 20,
+    "fields": {
+      "nombre": "Departamento en Valdivia",
+      "descripcion": "Departamento con vista al río y buena ubicación.",
+      "m2_construidos": 85.0,
+      "m2_totales": 85.0,
+      "estacionamientos": 1,
+      "habitaciones": 3,
+      "banos": 2,
+      "direccion": "Calle General Lagos 345",
+      "comuna": "Valdivia",
+      "region": "12",
+      "tipo_inmueble": "departamento",
+      "precio_mensual": 900000.0,
+      "usuario": 3,
+      "imagen_inmueble": "inmuebles/deptovaldivia.jpg"
     }
   }
 ]

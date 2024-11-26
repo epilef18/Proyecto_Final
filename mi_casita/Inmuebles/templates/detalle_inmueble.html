@@ -1,0 +1,103 @@
+{% extends 'base.html' %} {% block title %} Detalle de {{ inmueble.nombre }}
+{%endblock %} {% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <!-- Card principal -->
+    <div class="col-lg-8">
+      <div class="card shadow-lg">
+        <div class="row g-0">
+          <!-- Imagen del inmueble -->
+          <div class="col-md-5">
+            <img
+              src="{{ inmueble.imagen_inmueble.url }}"
+              class="img-fluid rounded-start"
+              alt="{{ inmueble.nombre }}"
+            />
+          </div>
+          <!-- Detalles del inmueble -->
+          <div class="col-md-7">
+            <div class="card-body">
+              <h3 class="card-title text-primary">{{ inmueble.nombre }}</h3>
+              <p class="card-text">
+                <strong>Descripción:</strong> {{ inmueble.descripcion }}
+              </p>
+              <h4 class="text-success">
+                Precio: {{ inmueble.precio_mensual|floatformat:2 }} CLP
+              </h4>
+              <hr />
+              <ul class="list-unstyled">
+                <li><strong>Región:</strong> {{ inmueble.region.nombre }}</li>
+                <li><strong>Dirección:</strong> {{ inmueble.direccion }}</li>
+                <li>
+                  <strong>Habitaciones:</strong> {{ inmueble.habitaciones }}
+                </li>
+                <li><strong>Baños:</strong> {{ inmueble.banos }}</li>
+                <li>
+                  <strong>Superficie:</strong> {{ inmueble.superficie }} m²
+                </li>
+              </ul>
+
+              <div
+                class="d-flex justify-content-between align-items-center mt-3"
+              >
+                <a
+                  href="{% url 'lista_inmuebles_por_region' inmueble.region.id %}"
+                  class="btn btn btn-outline-secondary"
+                  >&laquo; Volver a la lista</a
+                >
+                <a
+                  href="mailto:{{ inmueble.vendedor.email }}"
+                  class="btn btn-outline-info"
+                  >Contactar al Arrendador</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mapa de ubicación -->
+  <div class="map-container mt-4">
+    <h4>Ubicación del Inmueble</h4>
+    <div id="map" style="height: 400px; width: 100%"></div>
+  </div>
+</div>
+
+{% endblock %} {% block extra_scripts %}
+<!-- Script de Google Maps -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkeh4uiQuf6j-mJ53XLpJVfF7YBiZP1c&callback=initMap&v=weekly"
+  async
+  defer
+></script>
+
+<script>
+  function initMap() {
+    const geocoder = new google.maps.Geocoder();
+    const direccion = "{{ inmueble.direccion }}"; // Dirección del inmueble
+
+    if (direccion) {
+      geocoder.geocode({ address: direccion }, function (results, status) {
+        if (status === "OK") {
+          const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: results[0].geometry.location,
+          });
+
+          const marker = new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map,
+            title: "{{ inmueble.nombre }}",
+          });
+        } else {
+          alert("Geocodificación fallida: " + status);
+        }
+      });
+    } else {
+      alert("La dirección no está disponible.");
+    }
+  }
+</script>
+{% endblock %}
