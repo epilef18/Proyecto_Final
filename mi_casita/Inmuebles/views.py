@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RegistroUsuarioForm
-from .models import Inmueble, Region, PerfilUsuario
+from .models import Inmueble, Region, PerfilUsuario, Comuna
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.http import JsonResponse
+from .forms import InmuebleForm
 from django.views.generic import (
     ListView,
     DetailView,
@@ -11,6 +13,13 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+
+
+def load_comunas(request):
+    region_id = request.GET.get("region_id")
+    comunas = Comuna.objects.filter(region_id=region_id).order_by("nombre")
+    return JsonResponse(list(comunas.values("id", "nombre")), safe=False)
+
 
 def registro_usuario(request):
     if request.method == "POST":
@@ -75,21 +84,7 @@ class MiInmueblesDetailView(LoginRequiredMixin, DetailView):
 
 class MiInmueblesCreateView(LoginRequiredMixin, CreateView):
     model = Inmueble
-    fields = [
-        "nombre",
-        "descripcion",
-        "m2_construidos",
-        "m2_totales",
-        "estacionamientos",
-        "habitaciones",
-        "banos",
-        "direccion",
-        "region",
-        "comuna",
-        "tipo_inmueble",
-        "precio_mensual",
-        "imagen_inmueble",
-    ]
+    form_class = InmuebleForm
     template_name = "inmuebles_creacion.html"
     success_url = reverse_lazy("inmuebles_list")
 
@@ -100,21 +95,7 @@ class MiInmueblesCreateView(LoginRequiredMixin, CreateView):
 
 class MiInmueblesUpdateView(LoginRequiredMixin, UpdateView):
     model = Inmueble
-    fields = [
-        "nombre",
-        "descripcion",
-        "m2_construidos",
-        "m2_totales",
-        "estacionamientos",
-        "habitaciones",
-        "banos",
-        "direccion",
-        "region",
-        "comuna",
-        "tipo_inmueble",
-        "precio_mensual",
-        "imagen_inmueble",
-    ]
+    form_class = InmuebleForm
     template_name = "inmuebles_form.html"
     success_url = reverse_lazy("inmuebles_list")
 
@@ -129,7 +110,9 @@ class MiInmueblesDeleteView(LoginRequiredMixin, DeleteView):
 
     def get_queryset(self):
         return Inmueble.objects.filter(usuario=self.request.user)
-#======= Perfil Usuario
+
+
+# ======= Perfil Usuario
 def perfil_usuario(request):
     try:
         perfil = PerfilUsuario.objects.get(user=request.user)
