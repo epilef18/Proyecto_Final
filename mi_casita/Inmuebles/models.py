@@ -46,10 +46,11 @@ class Inmueble(models.Model):
     comuna = models.CharField(max_length=100)
     tipo_inmueble = models.CharField(max_length=50)
     precio_mensual = models.DecimalField(max_digits=10, decimal_places=2)
-    imagen_inmueble = models.ImageField(
-        upload_to="inmuebles", null=True, blank=True
-    )
+    imagen_inmueble = models.ImageField(upload_to="inmuebles", null=True, blank=True)
     region = models.ForeignKey(Region, on_delete=models.SET_NULL, null=True, blank=True)
+    usuario = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="inmuebles", default=1
+    )
 
     def __str__(self):
         return self.nombre

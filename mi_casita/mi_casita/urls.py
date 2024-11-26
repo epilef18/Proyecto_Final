@@ -4,12 +4,15 @@ from Inmuebles.views import (
     registro_usuario,
     home,
     lista_inmuebles_por_region,
-    detalle_inmueble,
+    MiInmueblesListView,
+    MiInmueblesDetailView,
+    MiInmueblesCreateView,
+    MiInmueblesUpdateView,
+    MiInmueblesDeleteView,
 )
 from django.contrib.auth.views import LoginView, LogoutView
 from django.conf.urls.static import static
 from . import settings
-
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -22,8 +25,21 @@ urlpatterns = [
         lista_inmuebles_por_region,
         name="lista_inmuebles_por_region",
     ),
-    path("inmueble/<int:id>/", detalle_inmueble, name="detalle_inmueble"),
+    path(
+        "inmueble/<int:id>/", MiInmueblesDetailView.as_view(), name="detalle_inmueble"
+    ),
+    path("inmuebles/", MiInmueblesListView.as_view(), name="inmuebles_list"),
+    path("inmuebles/nuevo/", MiInmueblesCreateView.as_view(), name="inmueble_creacion"),
+    path(
+        "inmuebles/<int:pk>/editar/",
+        MiInmueblesUpdateView.as_view(),
+        name="inmueble_form",
+    ),
+    path(
+        "inmuebles/<int:pk>/eliminar/",
+        MiInmueblesDeleteView.as_view(),
+        name="inmueble_eliminar",
+    ),
 ]
 
-urlpatterns += static(
-    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
