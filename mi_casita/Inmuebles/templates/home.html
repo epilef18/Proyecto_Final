@@ -4,18 +4,16 @@
   <h1 class="text-center">Bienvenido a Mi Casita!</h1>
   <div class="row">
     {% for region in regions %}
-    <div class="col-md-6 mb-4">
-      <div class="view overlay">
-        <a
-            href="{% url 'lista_inmuebles_por_region' region.id %}"
-          >
-        <img
-          src="{{ region.imagen_region.url }}"
-          class="card-img-top h-100"
-          alt="Imagen de {{ region.nombre }}"
-        />
+    <div class="col-md-6 mb-4 d-flex align-items-stretch">
+      <div class="card h-100">
+        <a href="{% url 'lista_inmuebles_por_region' region.id %}">
+          <img
+            src="{{ region.imagen_region.url }}"
+            class="card-img-top"
+            alt="Imagen de {{ region.nombre }}"
+            style="height: 200px; width: 100%; object-fit: fill"
+          />
         </a>
-      
         <div class="card-body text-center">
           <h5 class="card-title">{{ region.nombre }}</h5>
         </div>
