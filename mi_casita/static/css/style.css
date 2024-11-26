@@ -1,9 +1,18 @@
-.img{
+.card-img-top {
     display: block;
-    width: 600px;
-    height: 300px;
+    width: 400px;
+    height: 200px;
     object-fit: cover;
 }
-body{
-    background-color: coral;
+.card-precio{
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+.navbar{
+    background-color: #e59572;
+}
+.card-body{
+    background-color: #fdc4b6;
+}
+body {
+    background-color: #4dbedf;
 }

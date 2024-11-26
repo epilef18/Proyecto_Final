@@ -9,6 +9,7 @@ from Inmuebles.views import (
 from django.contrib.auth.views import LoginView, LogoutView
 from django.conf.urls.static import static
 from . import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
@@ -25,5 +26,6 @@ urlpatterns = [
     path("inmueble/<int:id>/", detalle_inmueble, name="detalle_inmueble"),
 ]
 
+urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
