@@ -15,7 +15,7 @@
       "region": "16",
       "tipo_inmueble": "departamento",
       "precio_mensual": 900000.0,
-      "usuario": 8
+      "usuario": 8,
       "imagen_inmueble": "inmuebles/deptoprovi.webp"
     }
   },
@@ -35,7 +35,7 @@
       "region": "6",
       "tipo_inmueble": "parcela",
       "precio_mensual": 2000000.0,
-      "usuario": 5
+      "usuario": 5,
       "imagen_inmueble": "inmuebles/parcelavinadelmar.jpg"
     }
   },
@@ -55,7 +55,7 @@
       "region": "16",
       "tipo_inmueble": "casa",
       "precio_mensual": 1200000.0,
-      "usuario": 7
+      "usuario": 7,
       "imagen_inmueble": "inmuebles/casalaflor.webp"
     }
   },
@@ -75,7 +75,7 @@
       "region": "16",
       "tipo_inmueble": "departamento",
       "precio_mensual": 750000.0,
-      "usuario": 9
+      "usuario": 9,
       "imagen_inmueble": "inmuebles/deptostgocentro.jpg"
     }
   },
@@ -95,7 +95,7 @@
       "region": "16",
       "tipo_inmueble": "parcela",
       "precio_mensual": 800000.0,
-      "usuario": 3
+      "usuario": 3,
       "imagen_inmueble": "inmuebles/parcelacajonmaipo.webp"
     }
   },
@@ -115,7 +115,7 @@
       "region": "16",
       "tipo_inmueble": "casa",
       "precio_mensual": 1400000.0,
-      "usuario": 1
+      "usuario": 1,
       "imagen_inmueble": "inmuebles/casapeñalolen.jpg"
     }
   },
@@ -135,7 +135,7 @@
       "region": "16",
       "tipo_inmueble": "departamento",
       "precio_mensual": 1500000.0,
-      "usuario": 2
+      "usuario": 2,
       "imagen_inmueble": "inmuebles/casalascondes.jpeg"
     }
   },
@@ -155,7 +155,7 @@
       "region": "16",
       "tipo_inmueble": "casa",
       "precio_mensual": 3000000.0,
-      "usuario": 8
+      "usuario": 8,
       "imagen_inmueble": "inmuebles/casavitacura.jpg"
     }
   },
@@ -175,8 +175,7 @@
       "region": "7",
       "tipo_inmueble": "parcela",
       "precio_mensual": 500000.0,
-      "usuario": 6
-=======
+      "usuario": 6,
       "imagen_inmueble": "inmuebles/parcelarancagua.jpeg"
     }
   },
@@ -196,8 +195,7 @@
       "region": "16",
       "tipo_inmueble": "departamento",
       "precio_mensual": 850000.0,
-      "usuario": 4
-=======
+      "usuario": 4,
       "imagen_inmueble": "inmuebles/casanunoa.jpg"
     }
   },
@@ -217,7 +215,7 @@
       "region": "16",
       "tipo_inmueble": "casa",
       "precio_mensual": 1600000.0,
-      "usuario": 7
+      "usuario": 7,
       "imagen_inmueble": "inmuebles/casalareina.webp"
     }
   },
@@ -237,7 +235,7 @@
       "region": "7",
       "tipo_inmueble": "parcela",
       "precio_mensual": 300000.0,
-      "usuario": 7
+      "usuario": 7,
       "imagen_inmueble": "inmuebles/parcelasanfer.webp"
     }
   },
@@ -257,7 +255,7 @@
       "region": "10",
       "tipo_inmueble": "departamento",
       "precio_mensual": 700000.0,
-      "usuario": 7
+      "usuario": 7,
       "imagen_inmueble": "inmuebles/deptoconce.jpg"
     }
   },
@@ -277,7 +275,7 @@
       "region": "16",
       "tipo_inmueble": "casa",
       "precio_mensual": 1100000.0,
-      "usuario": 3
+      "usuario": 3,
       "imagen_inmueble": "inmuebles/casatalagante.jpg"
     }
   },
@@ -317,7 +315,7 @@
       "region": "16",
       "tipo_inmueble": "casa",
       "precio_mensual": 1300000.0,
-      "usuario": 9
+      "usuario": 9,
       "imagen_inmueble": "inmuebles/casapudahuel.webp"
     }
   },
@@ -337,7 +335,7 @@
       "region": "6",
       "tipo_inmueble": "parcela",
       "precio_mensual": 400000.0,
-      "usuario": 9
+      "usuario": 9,
       "imagen_inmueble": "inmuebles/parcelaquilpue.webp"
     }
   },
@@ -357,7 +355,7 @@
       "region": "15",
       "tipo_inmueble": "casa",
       "precio_mensual": 1400000.0,
-      "usuario": 3
+      "usuario": 3,
       "imagen_inmueble": "inmuebles/casapuntarenas.webp"
     }
   },
@@ -377,7 +375,7 @@
       "region": "14",
       "tipo_inmueble": "cabaña",
       "precio_mensual": 600000.0,
-      "usuario": 2
+      "usuario": 2,
       "imagen_inmueble": "inmuebles/cabañacoyhaique.jpg"
     }
   },
@@ -397,7 +395,7 @@
       "region": "12",
       "tipo_inmueble": "departamento",
       "precio_mensual": 900000.0,
-      "usuario": 3
+      "usuario": 3,
       "imagen_inmueble": "inmuebles/deptovaldivia.jpg"
     }
   }
