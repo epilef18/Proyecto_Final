@@ -28,7 +28,11 @@ urlpatterns = [
         lista_inmuebles_por_region,
         name="lista_inmuebles_por_region",
     ),
-    path("inmueble/<int:pk>/", MiInmueblesDetailView.as_view(), name="vista_inmueble"),
+    path(
+        "inmueble/user/<int:pk>/",
+        MiInmueblesDetailView.as_view(),
+        name="vista_inmueble",
+    ),
     path("inmuebles/", MiInmueblesListView.as_view(), name="inmuebles_list"),
     path("inmuebles/nuevo/", MiInmueblesCreateView.as_view(), name="inmueble_creacion"),
     path(
