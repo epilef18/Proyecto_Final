@@ -1,8 +1,13 @@
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth.views import LoginView, LogoutView
+from django.conf.urls.static import static
+from . import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from Inmuebles.views import (
     perfil_usuario,
     registro_usuario,
+    load_comunas,
     home,
     lista_inmuebles_por_region,
     detalle_inmueble,
@@ -12,14 +17,12 @@ from Inmuebles.views import (
     MiInmueblesUpdateView,
     MiInmueblesDeleteView,
 )
-from django.contrib.auth.views import LoginView, LogoutView
-from django.conf.urls.static import static
-from . import settings
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("registro/", registro_usuario, name="registro"),
+    path("ajax/load-comunas/", load_comunas, name="ajax_load_comunas"),
     path("login/", LoginView.as_view(template_name="login.html"), name="login"),
     path("logout/", LogoutView.as_view(template_name="logout.html"), name="logout"),
     path("", home, name="home"),

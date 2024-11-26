@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}<!DOCTYPE html>
+{% extends 'base.html' %} {% block content %}
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -21,6 +22,28 @@
     {% if form.errors %}
     <p>Hubo algunos errores en el formulario. Por favor, revisa los campos.</p>
     {% endif %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+      $("#id_region").change(function () {
+        var url = "{% url 'ajax_load_comunas' %}"; // obtiene la URL para la vista de carga AJAX
+        var regionId = $(this).val(); // obtiene el id de la región seleccionada
+        $.ajax({
+          url: url,
+          data: {
+            region_id: regionId,
+          },
+          success: function (data) {
+            $("#id_comuna").html(""); // vacía las opciones existentes
+            $.each(data, function (key, value) {
+              $("#id_comuna").append(
+                '<option value="' + value.id + '">' + value.nombre + "</option>"
+              );
+            });
+          },
+        });
+      });
+    </script>
   </body>
 </html>
 {% endblock %}
