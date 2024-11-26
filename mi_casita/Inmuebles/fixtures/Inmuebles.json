@@ -295,7 +295,7 @@
       "region": "5",
       "tipo_inmueble": "departamento",
       "precio_mensual": 950000.0,
-      "usuario": 9
+      "usuario": 9,
       "imagen_inmueble": "inmuebles/deptols.jpg"
     }
   },
