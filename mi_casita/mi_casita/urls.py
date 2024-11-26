@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from Inmuebles.views import (
+    perfil_usuario,
     registro_usuario,
     home,
     lista_inmuebles_por_region,
@@ -23,7 +24,7 @@ urlpatterns = [
         name="lista_inmuebles_por_region",
     ),
     path("inmueble/<int:id>/", detalle_inmueble, name="detalle_inmueble"),
+    path("perfil/", perfil_usuario, name="perfil_usuario"),
 ]
 
-urlpatterns += static(
-    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
