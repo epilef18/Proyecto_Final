@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from Inmuebles.views import (
+    perfil_usuario,
     registro_usuario,
     home,
     lista_inmuebles_por_region,
@@ -13,6 +14,7 @@ from Inmuebles.views import (
 from django.contrib.auth.views import LoginView, LogoutView
 from django.conf.urls.static import static
 from . import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -38,6 +40,12 @@ urlpatterns = [
         MiInmueblesDeleteView.as_view(),
         name="inmueble_eliminar",
     ),
+    path("inmueble/<int:id>/", detalle_inmueble, name="detalle_inmueble"),
+    path("perfil/", perfil_usuario, name="perfil_usuario"),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(
+    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
