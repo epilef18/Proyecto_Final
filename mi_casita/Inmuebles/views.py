@@ -5,7 +5,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.http import JsonResponse
-from .forms import InmuebleForm
+from .forms import InmuebleForm, PerfilUsuarioForm
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.views.generic import (
     ListView,
     DetailView,
@@ -15,10 +17,30 @@ from django.views.generic import (
 )
 
 
+@login_required
+def editar_perfil(request, pk):
+    perfil = get_object_or_404(PerfilUsuario, pk=pk)
+    if request.method == "POST":
+        form = PerfilUsuarioForm(request.POST, instance=perfil)
+        if form.is_valid():
+            form.save()
+            return redirect("perfil_usuario")
+    else:
+        form = PerfilUsuarioForm(instance=perfil)
+    return render(request, "editar_perfil.html", {"form": form})
+
+
 def load_comunas(request):
-    region_id = request.GET.get("region_id")
-    comunas = Comuna.objects.filter(region_id=region_id).order_by("nombre")
-    return JsonResponse(list(comunas.values("id", "nombre")), safe=False)
+    region_id = request.GET.get("region_id")  # Obtiene el ID de la región
+    if region_id:
+        try:
+            comunas = Comuna.objects.filter(region_id=region_id).order_by("nombre")
+            data = [{"id": comuna.id, "nombre": comuna.nombre} for comuna in comunas]
+        except Comuna.DoesNotExist:
+            data = []  # Si no hay comunas, retorna lista vacía
+    else:
+        data = []  # Si no se recibe `region_id`, retorna lista vacía
+    return JsonResponse(data, safe=False)
 
 
 def registro_usuario(request):
@@ -117,9 +139,6 @@ def perfil_usuario(request):
     try:
         perfil = PerfilUsuario.objects.get(user=request.user)
     except PerfilUsuario.DoesNotExist:
-        # Handle the case where no PerfilUsuario is found for the user
-        perfil = (
-            None  # Or you could redirect to a create profile page or show a message
-        )
+        perfil = None
 
     return render(request, "perfil_usuario.html", {"perfil": perfil})

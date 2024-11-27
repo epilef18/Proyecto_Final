@@ -106,3 +106,52 @@ class InmuebleForm(forms.ModelForm):
             self.fields["comuna"].queryset = self.instance.region.comunas.order_by(
                 "nombre"
             )
+
+
+class PerfilUsuarioForm(forms.ModelForm):
+    # Campos región y comuna definidos
+    region = forms.ModelChoiceField(
+        queryset=Region.objects.all(),
+        widget=forms.Select(attrs={"class": "form-control", "id": "id_region"}),
+        label="Región",
+    )
+    comuna = forms.ModelChoiceField(
+        queryset=Comuna.objects.none(),
+        widget=forms.Select(attrs={"class": "form-control", "id": "id_comuna"}),
+        label="Comuna",
+    )
+
+    class Meta:
+        model = PerfilUsuario
+        fields = ["tipo_usuario", "direccion", "comuna", "region"]
+        widgets = {
+            "tipo_usuario": forms.Select(attrs={"class": "form-control"}),
+            "direccion": forms.TextInput(attrs={"class": "form-control"}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.instance and self.instance.region:
+            # Comuna preseleccionada basada en la región de la instancia
+            self.fields["comuna"].queryset = Comuna.objects.filter(
+                region=self.instance.region
+            ).order_by("nombre")
+        elif "region" in self.data:
+            try:
+                # Comuna filtrada por región seleccionada en el formulario
+                region_id = int(self.data.get("region"))
+                self.fields["comuna"].queryset = Comuna.objects.filter(
+                    region_id=region_id
+                ).order_by("nombre")
+            except (ValueError, TypeError):
+                self.fields["comuna"].queryset = Comuna.objects.none()
+        else:
+            self.fields["comuna"].queryset = Comuna.objects.none()
+
+        # Manejar casos en que comuna ya tiene un valor
+        if "comuna" in self.data:
+            try:
+                comuna_id = int(self.data.get("comuna"))
+                self.fields["comuna"].queryset = Comuna.objects.filter(id=comuna_id)
+            except (ValueError, TypeError):
+                self.fields["comuna"].queryset = Comuna.objects.none()

@@ -15,15 +15,19 @@
         <div class="col-md-9">{{ perfil.direccion }}</div>
       </div>
       <div class="row mb-3">
-        <div class="col-md-3"><strong>Comuna:</strong></div>
-        <div class="col-md-9">{{ perfil.comuna.nombre }}</div>
-      </div>
-      <div class="row mb-3">
         <div class="col-md-3"><strong>Región:</strong></div>
         <div class="col-md-9">{{ perfil.region.nombre }}</div>
       </div>
+      <div class="row mb-3">
+        <div class="col-md-3"><strong>Comuna:</strong></div>
+        <div class="col-md-9">{{ perfil.comuna.nombre }}</div>
+      </div>
     </div>
-    <div class="card-footer">falta aca el boton de editar me dio paja</div>
+    <div class="card-footer d-flex justify-content-end">
+      <a href="{% url 'editar_perfil' perfil.id %}" class="btn btn-primary"
+        >Editar</a
+      >
+    </div>
   </div>
 </div>
 {% endblock %}
