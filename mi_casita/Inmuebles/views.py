@@ -6,7 +6,6 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.http import JsonResponse
 from .forms import InmuebleForm, PerfilUsuarioForm
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.views.generic import (
     ListView,
