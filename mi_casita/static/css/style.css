@@ -1,18 +1,32 @@
 .card-img-top {
-    display: block;
-    width: 400px;
-    height: 200px;
-    object-fit: cover;
+  display: block;
+  height: 200px;
+  object-fit: cover;
 }
-.card-precio{
-    font-family: "Lucida Console", "Courier New", monospace;
+.card-precio {
+  font-family: "Lucida Console", "Courier New", monospace;
 }
-.navbar{
-    background-color: #e59572;
+.navbar {
+  background-color: #f2a9a9;
 }
-.card-body{
-    background-color: #fdc4b6;
+.card-header {
+  background-color: #fdcfc4;
+}
+.card-body {
+  background-color: #70cbe5;
+}
+.card-footer {
+  background-color: #fdcfc4;
+}
+.imageninmueble {
+  background-color: #70cbe5;
 }
 body {
-    background-color: #4dbedf;
+  background-color: #a6deef;
+}
+footer {
+  background-color: #a6deef;
+}
+p {
+  text-align: center;
 }

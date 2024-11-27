@@ -4,10 +4,12 @@
   <div class="row justify-content-center">
     <!-- Card principal -->
     <div class="col-lg-8">
-      <div class="card shadow-lg">
+      <div class="card shadow-lg border-0">
         <div class="row g-0">
           <!-- Imagen del inmueble -->
-          <div class="col-md-5">
+          <div
+            class="rounded-start imageninmueble col-md-5 align-items-center d-flex"
+          >
             <img
               src="{{ inmueble.imagen_inmueble.url }}"
               class="img-fluid rounded-start"
@@ -16,7 +18,7 @@
           </div>
           <!-- Detalles del inmueble -->
           <div class="col-md-7">
-            <div class="card-body">
+            <div class="card-body rounded-end">
               <h3 class="card-title text-primary">{{ inmueble.nombre }}</h3>
               <p class="card-text">
                 <strong>Descripción:</strong> {{ inmueble.descripcion }}
@@ -47,7 +49,7 @@
                 >
                 <a
                   href="mailto:{{ inmueble.vendedor.email }}"
-                  class="btn btn-outline-info"
+                  class="btn btn-outline-success"
                   >Contactar al Arrendador</a
                 >
               </div>
