@@ -1,0 +1,59 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg bg-body-primary fixed-top shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img
+        src="{% static 'img/Logo.png' %}"
+        alt="Logo"
+        width="50"
+        height="50"
+        class="d-inline-block align-text-top animate-logo"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Opciones del menú -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link scroll-to" href="/">Home</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="/perfil">Bienvenido, {{ user.username }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'inmuebles_list' %}"
+            >Mis Inmuebles</a
+          >
+        </li>
+        {% block Logoutblock %}
+        <form action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-outline-danger">
+            Cerrar sesión
+          </button>
+        </form>
+        {% endblock %} {% else %}
+        <li class="nav-item">
+          <a class="nav-link scroll-to" href="/login">Iniciar Sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link scroll-to" href="/registro">Registrarse</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

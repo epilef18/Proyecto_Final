@@ -6,19 +6,23 @@
   <h6 class="text-center mb-2">Explora las propiedades que manejamos a lo largo de todo Chile!</h3>
   <div class="row">
     {% for region in regions %}
-    <div class="col-md-3 mb-2">
-      <div class="view overlay">
+    <div class="col-md-3 m-0 p-0">
+      <div class="wrapper">
         <a
-            href="{% url 'lista_inmuebles_por_region' region.id %}"
-          >
-        <img
-          src="{% static 'img/' %}{{ region.nombre|slugify }}.jpg"
-          class="card-img-top"
-          alt="Imagen de {{ region.nombre }}"
-        />
-        </a>
-        <div class="card-text text-center">
-          <h6 class="card-title"> {{ region.nombre }} </h6>
+              href="{% url 'lista_inmuebles_por_region' region.id %}"
+            >
+        <div class="imagenregion">
+          <img
+            src="{% static 'img/' %}{{ region.nombre|slugify }}.jpg"
+            class="card-img-top"
+            alt="Imagen de {{ region.nombre }}"
+          />
+          <div class="hover-text card-text text-center">
+            <div class="texto">
+              <h6 class="card-title"> {{ region.nombre }} </h6>
+            </div>
+          </div>
+          </a>
         </div>
       </div>
     </div>
