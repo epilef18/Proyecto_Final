@@ -12,7 +12,7 @@ class Region(models.Model):
 
 class Comuna(models.Model):
     nombre = models.CharField(max_length=100)
-    region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name="comunas")
+    region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name="comuna")
 
     def __str__(self):
         return self.nombre
@@ -27,8 +27,8 @@ class PerfilUsuario(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="perfil")
     tipo_usuario = models.CharField(max_length=20, choices=USUARIO_TIPOS)
     direccion = models.CharField(max_length=200)
-    comuna = models.ForeignKey(Comuna, on_delete=models.SET_NULL, null=True, blank=True)
     region = models.ForeignKey(Region, on_delete=models.SET_NULL, null=True, blank=True)
+    comuna = models.ForeignKey(Comuna, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return f"{self.user.username} - {self.tipo_usuario}"
