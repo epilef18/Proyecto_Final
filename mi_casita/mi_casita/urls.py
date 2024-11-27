@@ -11,6 +11,7 @@ from Inmuebles.views import (
     home,
     lista_inmuebles_por_region,
     detalle_inmueble,
+    editar_perfil,
     MiInmueblesListView,
     MiInmueblesDetailView,
     MiInmueblesCreateView,
@@ -50,6 +51,7 @@ urlpatterns = [
     ),
     path("inmueble/<int:id>/", detalle_inmueble, name="detalle_inmueble"),
     path("perfil/", perfil_usuario, name="perfil_usuario"),
+    path("perfil/editar/<int:pk>/", editar_perfil, name="editar_perfil"),
 ]
 
 
