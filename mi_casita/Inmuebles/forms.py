@@ -187,7 +187,7 @@ class InmuebleForm(forms.ModelForm):
                 ).order_by("nombre")
             except (ValueError, TypeError):
                 pass
-        elif self.instance.pk:
+        elif self.instance.pk and self.instance.region:
             self.fields["comuna"].queryset = self.instance.region.comunas.order_by(
                 "nombre"
             )

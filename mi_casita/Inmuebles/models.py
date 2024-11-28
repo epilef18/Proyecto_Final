@@ -12,7 +12,7 @@ class Region(models.Model):
 
 class Comuna(models.Model):
     nombre = models.CharField(max_length=100)
-    region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name="comuna")
+    region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name="comunas")
 
     def __str__(self):
         return self.nombre
