@@ -1,24 +1,127 @@
 {% extends "base.html" %} {% block content %}
-<div class="container mt-5">
-  <h1 class="text-center">Agregar Inmueble</h1>
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %} {{ form.as_p }}
-    <button type="submit" class="btn btn-success">Guardar</button>
+<h1 class="text-center mb-4">Agregar Inmueble</h1>
+
+<div class="card shadow-sm p-4">
+  <form
+    method="post"
+    enctype="multipart/form-data"
+    class="needs-validation"
+    novalidate
+  >
+    {% csrf_token %}
+
+    <!-- Información General -->
+    <fieldset class="mb-4">
+      <legend class="h5 mb-3">Información General</legend>
+      <div class="mb-3">
+        {{ form.nombre.label_tag }} {{ form.nombre }}
+        <div class="invalid-feedback">Por favor, ingresa un nombre válido.</div>
+      </div>
+      <div class="mb-3">
+        {{ form.descripcion.label_tag }} {{ form.descripcion }}
+        <div class="invalid-feedback">Por favor, ingresa una descripción.</div>
+      </div>
+      <div class="mb-3">
+        {{ form.tipo_inmueble.label_tag }} {{ form.tipo_inmueble }}
+        <div class="invalid-feedback">
+          Selecciona un tipo de inmueble válido.
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Características -->
+    <fieldset class="mb-4">
+      <legend class="h5 mb-3">Características</legend>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          {{ form.m2_construidos.label_tag }} {{ form.m2_construidos }}
+          <div class="invalid-feedback">Ingresa un valor válido.</div>
+        </div>
+        <div class="col-md-6 mb-3">
+          {{ form.m2_totales.label_tag }} {{ form.m2_totales }}
+          <div class="invalid-feedback">Ingresa un valor válido.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          {{ form.estacionamientos.label_tag }} {{ form.estacionamientos }}
+          <div class="invalid-feedback">Ingresa un número válido.</div>
+        </div>
+        <div class="col-md-4 mb-3">
+          {{ form.habitaciones.label_tag }} {{ form.habitaciones }}
+          <div class="invalid-feedback">Ingresa un número válido.</div>
+        </div>
+        <div class="col-md-4 mb-3">
+          {{ form.banos.label_tag }} {{ form.banos }}
+          <div class="invalid-feedback">Ingresa un número válido.</div>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Ubicación -->
+    <fieldset class="mb-4">
+      <legend class="h5 mb-3">Ubicación</legend>
+      <div class="mb-3">
+        {{ form.region.label_tag }} {{ form.region }}
+        <div class="invalid-feedback">Selecciona una región válida.</div>
+      </div>
+      <div class="mb-3">
+        {{ form.comuna.label_tag }} {{ form.comuna }}
+        <div class="invalid-feedback">Selecciona una comuna válida.</div>
+      </div>
+      <div class="mb-3">
+        {{ form.direccion.label_tag }} {{ form.direccion }}
+        <div class="invalid-feedback">Por favor, ingresa una dirección.</div>
+      </div>
+    </fieldset>
+
+    <!-- Imagen y Precio -->
+    <fieldset class="mb-4">
+      <legend class="h5 mb-3">Imagen y Precio</legend>
+      <div class="mb-3">
+        {{ form.precio_mensual.label_tag }} {{ form.precio_mensual }}
+        <div class="invalid-feedback">Por favor, ingresa un precio válido.</div>
+      </div>
+      <div class="mb-3">
+        {{ form.imagen_inmueble.label_tag }} {{ form.imagen_inmueble }}
+        <div class="invalid-feedback">Sube una imagen válida.</div>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary w-100">Guardar</button>
   </form>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
+<script>
+  (function () {
+    "use strict";
+    var forms = document.querySelectorAll(".needs-validation");
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        "submit",
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+
   $("#id_region").change(function () {
     var url = "{% url 'ajax_load_comunas' %}";
     var regionId = $(this).val();
     $.ajax({
       url: url,
-      data: {
-        region_id: regionId,
-      },
+      data: { region_id: regionId },
       success: function (data) {
-        $("#id_comuna").html("");
+        $("#id_comuna").html(
+          '<option value="" selected>Seleccione una comuna</option>'
+        );
         $.each(data, function (key, value) {
           $("#id_comuna").append(
             '<option value="' + value.id + '">' + value.nombre + "</option>"
