@@ -1,49 +1,112 @@
 {% extends 'base.html' %} {% block content %}
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro de Usuario</title>
-  </head>
-  <body>
-    <h1 class="text-center">Formulario de Registro</h1>
+<h1 class="text-center mb-4">Formulario de Registro</h1>
 
-    {% if mensaje %}
-    <p>{{ mensaje }}</p>
-    {% endif %}
+<div class="card shadow-sm p-4">
+  {% if mensaje %}
+  <div class="alert alert-success" role="alert">{{ mensaje }}</div>
+  {% endif %}
 
-    <form method="POST">
-      {% csrf_token %} {{ form.as_p }}
-      <!-- Muestra el formulario -->
-      <button type="submit">Registrar</button>
-    </form>
+  <form method="POST" class="needs-validation" novalidate>
+    {% csrf_token %}
 
-    {% if form.errors %}
-    <p>Hubo algunos errores en el formulario. Por favor, revisa los campos.</p>
-    {% endif %}
+    <!-- Información del Usuario -->
+    <fieldset class="mb-4">
+      <legend class="h5 mb-3">Información del Usuario</legend>
+      <div class="mb-3">
+        {{ form.username.label_tag }} {{ form.username }}
+        <div class="invalid-feedback">
+          Por favor, ingresa un nombre de usuario válido.
+        </div>
+      </div>
+      <div class="mb-3">
+        {{ form.email.label_tag }} {{ form.email }}
+        <div class="invalid-feedback">
+          Por favor, ingresa un correo electrónico válido.
+        </div>
+      </div>
+    </fieldset>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript">
-      $("#id_region").change(function () {
-        var url = "{% url 'ajax_load_comunas' %}"; // obtiene la URL para la vista de carga AJAX
-        var regionId = $(this).val(); // obtiene el id de la región seleccionada
-        $.ajax({
-          url: url,
-          data: {
-            region_id: regionId,
-          },
-          success: function (data) {
-            $("#id_comuna").html(""); // vacía las opciones existentes
-            $.each(data, function (key, value) {
-              $("#id_comuna").append(
-                '<option value="' + value.id + '">' + value.nombre + "</option>"
-              );
-            });
-          },
+    <!-- Dirección -->
+    <fieldset class="mb-4">
+      <legend class="h5 mb-3">Dirección</legend>
+      <div class="mb-3">
+        {{ form.region.label_tag }} {{ form.region }}
+        <div class="invalid-feedback">Selecciona una región válida.</div>
+      </div>
+      <div class="mb-3">
+        {{ form.comuna.label_tag }} {{ form.comuna }}
+        <div class="invalid-feedback">Selecciona una comuna válida.</div>
+      </div>
+      <div class="mb-3">
+        {{ form.direccion.label_tag }} {{ form.direccion }}
+        <div class="invalid-feedback">
+          Por favor, ingresa una dirección válida.
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Credenciales -->
+    <fieldset class="mb-4">
+      <legend class="h5 mb-3">Credenciales</legend>
+      <div class="mb-3">
+        {{ form.password.label_tag }} {{ form.password }}
+        <div class="invalid-feedback">
+          Por favor, ingresa una contraseña válida.
+        </div>
+      </div>
+      <div class="mb-3">
+        {{ form.tipo_usuario.label_tag }} {{ form.tipo_usuario }}
+        <div class="invalid-feedback">Selecciona un tipo de usuario.</div>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary w-100 mt-3">Registrar</button>
+  </form>
+
+  {% if form.errors %}
+  <div class="alert alert-danger mt-3" role="alert">
+    Hubo algunos errores en el formulario. Por favor, revisa los campos.
+  </div>
+  {% endif %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  (function () {
+    "use strict";
+    var forms = document.querySelectorAll(".needs-validation");
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener(
+        "submit",
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+
+  $("#id_region").change(function () {
+    var url = "{% url 'ajax_load_comunas' %}";
+    var regionId = $(this).val();
+    $.ajax({
+      url: url,
+      data: { region_id: regionId },
+      success: function (data) {
+        $("#id_comuna").html(
+          '<option value="" selected>Seleccione una comuna</option>'
+        );
+        $.each(data, function (key, value) {
+          $("#id_comuna").append(
+            '<option value="' + value.id + '">' + value.nombre + "</option>"
+          );
         });
-      });
-    </script>
-  </body>
-</html>
+      },
+    });
+  });
+</script>
 {% endblock %}
