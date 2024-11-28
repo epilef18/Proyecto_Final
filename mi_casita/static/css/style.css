@@ -1,17 +1,42 @@
 /* Estilos generales*/
 body {
   background-color: #a6deef;
-  padding-top: 0px;
+  padding-top: 50px;
+  font-family: "Roboto", sans-serif;
 }
 p {
   text-align: center;
+  color: #442c22;
+}
+ul {
+  list-style-type: none;
+}
+span{
+  font-size: 18px;
+  font-weight: 200;
+}
+h1{
+  color: #a0684f;
+}
+h3{
+  color: #442c22;
+}
+h5{
+  color: #442c22;
+}
+h6{
+  color: #5b3b2d;
 }
 /* Estilos de clases */
+
 .footer {
   background-color: #a6deef;
 }
 .card-img-top {
   height: 200px;
+}
+.imagenlink {
+  height: 150px;
 }
 .imagenregion {
   object-fit: cover;
@@ -72,9 +97,12 @@ p {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-/* Animations */
+/* Animaciones */
 .animate-logo {
   animation: float 3s infinite;
+}
+.imgcar {
+  max-height: 600px;
 }
 
 @keyframes float {
@@ -97,4 +125,40 @@ p {
   to {
     opacity: 1;
   }
+}
+/* estilos de fuentes*/
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
 }
