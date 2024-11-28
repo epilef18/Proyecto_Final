@@ -1,5 +1,4 @@
 <div class="container mt-4">
-  <!-- Formulario de búsqueda -->
   <div class="form-group">
     <input
       type="text"
@@ -9,13 +8,11 @@
     />
   </div>
 
-  <!-- Contenedor de resultados -->
   <div
     id="resultados"
     class="list-group mt-2"
     style="display: none; max-height: 300px; overflow-y: auto"
   >
-    <!-- Los resultados se cargarán aquí dinámicamente -->
   </div>
 </div>
 
@@ -30,7 +27,7 @@
         fetch(`/buscar/?query=${encodeURIComponent(query)}`)
           .then((response) => response.json())
           .then((data) => {
-            resultadosDiv.innerHTML = ""; // Limpiar resultados anteriores
+            resultadosDiv.innerHTML = ""; 
             if (data.length > 0) {
               data.forEach((item) => {
                 const enlace = document.createElement("a");
