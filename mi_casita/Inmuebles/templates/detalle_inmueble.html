@@ -59,47 +59,5 @@
       </div>
     </div>
   </div>
-
-  <!-- Mapa de ubicación -->
-  <div class="map-container mt-4">
-    <h4>Ubicación del Inmueble</h4>
-    <div id="map" style="height: 400px; width: 100%"></div>
-  </div>
 </div>
-
-{% endblock %} {% block extra_scripts %}
-<!-- Script de Google Maps -->
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnkeh4uiQuf6j-mJ53XLpJVfF7YBiZP1c&callback=initMap&v=weekly"
-  async
-  defer
-></script>
-
-<script>
-  function initMap() {
-    const geocoder = new google.maps.Geocoder();
-    const direccion = "{{ inmueble.direccion }}"; // Dirección del inmueble
-
-    if (direccion) {
-      geocoder.geocode({ address: direccion }, function (results, status) {
-        if (status === "OK") {
-          const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 15,
-            center: results[0].geometry.location,
-          });
-
-          const marker = new google.maps.Marker({
-            position: results[0].geometry.location,
-            map: map,
-            title: "{{ inmueble.nombre }}",
-          });
-        } else {
-          alert("Geocodificación fallida: " + status);
-        }
-      });
-    } else {
-      alert("La dirección no está disponible.");
-    }
-  }
-</script>
 {% endblock %}
