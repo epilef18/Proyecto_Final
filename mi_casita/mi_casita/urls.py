@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from . import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from Inmuebles.views import (
+    buscar,
     perfil_usuario,
     registro_usuario,
     load_comunas,
@@ -52,6 +53,7 @@ urlpatterns = [
     path("inmueble/<int:id>/", detalle_inmueble, name="detalle_inmueble"),
     path("perfil/", perfil_usuario, name="perfil_usuario"),
     path("perfil/editar/<int:pk>/", editar_perfil, name="editar_perfil"),
+    path("buscar/", buscar, name="buscar"),
 ]
 
 

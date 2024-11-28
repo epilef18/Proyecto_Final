@@ -142,3 +142,14 @@ def perfil_usuario(request):
         perfil = None
 
     return render(request, "perfil_usuario.html", {"perfil": perfil})
+
+
+def buscar(request):
+    query = request.GET.get("query", "")  # Obtiene el término de búsqueda
+    resultados = []
+
+    if query:
+        resultados = Inmueble.objects.filter(nombre__icontains=query).order_by("nombre")
+
+    data = [{"id": r.id, "nombre": r.nombre} for r in resultados]
+    return JsonResponse(data, safe=False)
