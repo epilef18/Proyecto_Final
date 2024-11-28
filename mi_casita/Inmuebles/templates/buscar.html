@@ -1,0 +1,56 @@
+<div class="container mt-4">
+  <!-- Formulario de búsqueda -->
+  <div class="form-group">
+    <input
+      type="text"
+      id="buscador"
+      class="form-control"
+      placeholder="Busca un inmueble..."
+    />
+  </div>
+
+  <!-- Contenedor de resultados -->
+  <div
+    id="resultados"
+    class="list-group mt-2"
+    style="display: none; max-height: 300px; overflow-y: auto"
+  >
+    <!-- Los resultados se cargarán aquí dinámicamente -->
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buscador = document.getElementById("buscador");
+    const resultadosDiv = document.getElementById("resultados");
+
+    buscador.addEventListener("input", function () {
+      const query = buscador.value.trim();
+      if (query.length > 0) {
+        fetch(`/buscar/?query=${encodeURIComponent(query)}`)
+          .then((response) => response.json())
+          .then((data) => {
+            resultadosDiv.innerHTML = ""; // Limpiar resultados anteriores
+            if (data.length > 0) {
+              data.forEach((item) => {
+                const enlace = document.createElement("a");
+                enlace.href = `/inmueble/${item.id}/`;
+                enlace.className = "list-group-item list-group-item-action";
+                enlace.textContent = item.nombre;
+                resultadosDiv.appendChild(enlace);
+              });
+              resultadosDiv.style.display = "block";
+            } else {
+              resultadosDiv.style.display = "none";
+            }
+          })
+          .catch((error) => {
+            console.error("Error al buscar:", error);
+            resultadosDiv.style.display = "none";
+          });
+      } else {
+        resultadosDiv.style.display = "none";
+      }
+    });
+  });
+</script>
