@@ -3,11 +3,11 @@
 {% load static %}
 <div class="container mt-4 mb-4">
   <h1 class="text-center mb-5">Bienvenido a Mi Casita!</h1>
-  <h6 class="text-center mb-2">Explora las propiedades que manejamos a lo largo de todo Chile!</h3>
+  <h6 class="text-center mb-2">Explora las propiedades que manejamos a lo largo de todo Chile!</h6>
     {% include "buscar.html"%}
   </br>
-  <div class="row">
-    <p class="font-weight-light mb-1">Puedes seleccionar por regiones!</p>
+  <div class="row my-3">
+    <span class="font-weight-light mb-1">Puedes seleccionar por regiones!</span>
     {% for region in regions %}
     <div class="col-md-3 m-0 p-0">
       <div class="wrapper">
@@ -31,6 +31,46 @@
     </div>
     {% endfor %}
   </div>
+<span class="text-left m-3">Consejos inmobiliarios</span>
+<div class="row row-cols-1 row-cols-md-4">
+<div class="col">
+  <div class="card h-100">
+    <img class="card-img-top" src="{% static 'img/cardshome1.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Cómo elegir una casa</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni molestias, praesentium assumenda inventore porro incidunt </p>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100">
+    <img class="card-img-top" src="{% static 'img/homecards2.webp' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Cómo elegir un arrendatario</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, atque blanditiis esse, labore inventore aperiam saepe nulla </p>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100">
+    <img class="card-img-top" src="{% static 'img/homecards4.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Invertir en el mercado inmobiliario</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid corporis fugit, voluptatum quae dolorem quos at est totam </p>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="card h-100">
+    <img class="card-img-top" src="{% static 'img/homecards3.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Arriendo compartido: cómo sobreponerse a los precios de arriendo</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos mollitia officia illo architecto voluptatem, inventore </p>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
 </div>
 <div id="carrusel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
