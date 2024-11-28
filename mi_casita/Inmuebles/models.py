@@ -12,7 +12,7 @@ class Region(models.Model):
 
 class Comuna(models.Model):
     nombre = models.CharField(max_length=100)
-    region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name="comuna")
+    region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name="comunas")
 
     def __str__(self):
         return self.nombre
@@ -35,6 +35,12 @@ class PerfilUsuario(models.Model):
 
 
 class Inmueble(models.Model):
+    TIPO_INMUEBLE_CHOICES = [
+        ("casa", "Casa"),
+        ("departamento", "Departamento"),
+        ("parcela", "Parcela"),
+    ]
+
     nombre = models.CharField(max_length=200)
     descripcion = models.TextField()
     m2_construidos = models.FloatField()
@@ -44,7 +50,11 @@ class Inmueble(models.Model):
     banos = models.IntegerField()
     direccion = models.CharField(max_length=200)
     comuna = models.CharField(max_length=100)
-    tipo_inmueble = models.CharField(max_length=50)
+    tipo_inmueble = models.CharField(
+        max_length=50,
+        choices=TIPO_INMUEBLE_CHOICES,
+        default="casa",
+    )
     precio_mensual = models.DecimalField(max_digits=10, decimal_places=2)
     imagen_inmueble = models.ImageField(upload_to="inmuebles", null=True, blank=True)
     region = models.ForeignKey(Region, on_delete=models.SET_NULL, null=True, blank=True)

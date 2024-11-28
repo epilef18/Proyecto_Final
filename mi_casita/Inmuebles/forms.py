@@ -4,6 +4,20 @@ from .models import PerfilUsuario, Comuna, Region, Inmueble
 
 
 class RegistroUsuarioForm(forms.ModelForm):
+    username = forms.CharField(
+        widget=forms.TextInput(
+            attrs={"class": "form-control", "placeholder": "Nombre de Usuario"}
+        ),
+        label="Nombre de Usuario",
+    )
+
+    email = forms.EmailField(
+        widget=forms.EmailInput(
+            attrs={"class": "form-control", "placeholder": "Correo Electrónico"}
+        ),
+        label="Correo Electrónico",
+    )
+
     tipo_usuario = forms.ChoiceField(
         choices=PerfilUsuario.USUARIO_TIPOS,
         widget=forms.Select(attrs={"class": "form-control"}),
@@ -24,8 +38,12 @@ class RegistroUsuarioForm(forms.ModelForm):
         widget=forms.Select(attrs={"class": "form-control", "id": "id_comuna"}),
         label="Comuna",
     )
+
     password = forms.CharField(
-        widget=forms.PasswordInput(attrs={"class": "form-control"}), label="Contraseña"
+        widget=forms.PasswordInput(
+            attrs={"class": "form-control", "placeholder": "Contraseña"}
+        ),
+        label="Contraseña",
     )
 
     class Meta:
@@ -41,7 +59,7 @@ class RegistroUsuarioForm(forms.ModelForm):
                     region_id=region_id
                 ).order_by("nombre")
             except (ValueError, TypeError):
-                pass  # inválido o valor vacío, omite el queryset
+                pass
         elif self.instance.pk:
             self.fields["comuna"].queryset = self.instance.region.comunas.order_by(
                 "nombre"
@@ -63,6 +81,58 @@ class RegistroUsuarioForm(forms.ModelForm):
 
 
 class InmuebleForm(forms.ModelForm):
+    nombre = forms.CharField(
+        widget=forms.TextInput(
+            attrs={"class": "form-control", "placeholder": "Nombre del Inmueble"}
+        ),
+        label="Nombre",
+    )
+    descripcion = forms.CharField(
+        widget=forms.Textarea(
+            attrs={
+                "class": "form-control",
+                "placeholder": "Descripción del Inmueble",
+                "rows": 3,
+            }
+        ),
+        label="Descripción",
+    )
+    m2_construidos = forms.IntegerField(
+        widget=forms.NumberInput(
+            attrs={"class": "form-control", "placeholder": "Metros Construidos"}
+        ),
+        label="Metros Construidos",
+    )
+    m2_totales = forms.IntegerField(
+        widget=forms.NumberInput(
+            attrs={"class": "form-control", "placeholder": "Metros Totales"}
+        ),
+        label="Metros Totales",
+    )
+    estacionamientos = forms.IntegerField(
+        widget=forms.NumberInput(
+            attrs={"class": "form-control", "placeholder": "Número de Estacionamientos"}
+        ),
+        label="Estacionamientos",
+    )
+    habitaciones = forms.IntegerField(
+        widget=forms.NumberInput(
+            attrs={"class": "form-control", "placeholder": "Número de Habitaciones"}
+        ),
+        label="Habitaciones",
+    )
+    banos = forms.IntegerField(
+        widget=forms.NumberInput(
+            attrs={"class": "form-control", "placeholder": "Número de Baños"}
+        ),
+        label="Baños",
+    )
+    direccion = forms.CharField(
+        widget=forms.TextInput(
+            attrs={"class": "form-control", "placeholder": "Dirección del Inmueble"}
+        ),
+        label="Dirección",
+    )
     region = forms.ModelChoiceField(
         queryset=Region.objects.all(),
         widget=forms.Select(attrs={"class": "form-control", "id": "id_region"}),
@@ -72,6 +142,21 @@ class InmuebleForm(forms.ModelForm):
         queryset=Comuna.objects.none(),
         widget=forms.Select(attrs={"class": "form-control", "id": "id_comuna"}),
         label="Comuna",
+    )
+    tipo_inmueble = forms.ChoiceField(
+        choices=Inmueble.TIPO_INMUEBLE_CHOICES,
+        widget=forms.Select(attrs={"class": "form-control"}),
+        label="Tipo de Inmueble",
+    )
+    precio_mensual = forms.DecimalField(
+        widget=forms.NumberInput(
+            attrs={"class": "form-control", "placeholder": "Precio Mensual"}
+        ),
+        label="Precio Mensual",
+    )
+    imagen_inmueble = forms.ImageField(
+        widget=forms.ClearableFileInput(attrs={"class": "form-control"}),
+        label="Imagen del Inmueble",
     )
 
     class Meta:
@@ -102,14 +187,22 @@ class InmuebleForm(forms.ModelForm):
                 ).order_by("nombre")
             except (ValueError, TypeError):
                 pass
-        elif self.instance.pk:
+        elif self.instance.pk and self.instance.region:
             self.fields["comuna"].queryset = self.instance.region.comunas.order_by(
                 "nombre"
             )
 
 
 class PerfilUsuarioForm(forms.ModelForm):
-    # Campos región y comuna definidos
+    tipo_usuario = forms.ChoiceField(
+        choices=PerfilUsuario.USUARIO_TIPOS,
+        widget=forms.Select(attrs={"class": "form-control", "id": "id_tipo_usuario"}),
+        label="Tipo de Usuario",
+    )
+    direccion = forms.CharField(
+        widget=forms.TextInput(attrs={"class": "form-control", "id": "id_direccion"}),
+        label="Dirección",
+    )
     region = forms.ModelChoiceField(
         queryset=Region.objects.all(),
         widget=forms.Select(attrs={"class": "form-control", "id": "id_region"}),
@@ -124,21 +217,15 @@ class PerfilUsuarioForm(forms.ModelForm):
     class Meta:
         model = PerfilUsuario
         fields = ["tipo_usuario", "direccion", "comuna", "region"]
-        widgets = {
-            "tipo_usuario": forms.Select(attrs={"class": "form-control"}),
-            "direccion": forms.TextInput(attrs={"class": "form-control"}),
-        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if self.instance and self.instance.region:
-            # Comuna preseleccionada basada en la región de la instancia
             self.fields["comuna"].queryset = Comuna.objects.filter(
                 region=self.instance.region
             ).order_by("nombre")
         elif "region" in self.data:
             try:
-                # Comuna filtrada por región seleccionada en el formulario
                 region_id = int(self.data.get("region"))
                 self.fields["comuna"].queryset = Comuna.objects.filter(
                     region_id=region_id
@@ -147,11 +234,3 @@ class PerfilUsuarioForm(forms.ModelForm):
                 self.fields["comuna"].queryset = Comuna.objects.none()
         else:
             self.fields["comuna"].queryset = Comuna.objects.none()
-
-        # Manejar casos en que comuna ya tiene un valor
-        if "comuna" in self.data:
-            try:
-                comuna_id = int(self.data.get("comuna"))
-                self.fields["comuna"].queryset = Comuna.objects.filter(id=comuna_id)
-            except (ValueError, TypeError):
-                self.fields["comuna"].queryset = Comuna.objects.none()
