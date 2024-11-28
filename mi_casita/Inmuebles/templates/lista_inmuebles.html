@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block title %} Mi Casita - Inmuebles {% endblock %}
 {% block content %}
-<h1 class="text-center">Inmuebles en {{ region.nombre }}</h1>
-
+<h1 class="text-center pt-2">Inmuebles en {{ region.nombre }}</h1>
+<div class="container">
 <ul class="row">
   {% for inmueble in inmuebles %}
   <li class="col-md-4 mb-3 pb-3">
@@ -24,4 +24,5 @@
   <li class="col-12">No hay inmuebles disponibles en esta región.</li>
   {% endfor %}
 </ul>
+</div>
 {% endblock %}

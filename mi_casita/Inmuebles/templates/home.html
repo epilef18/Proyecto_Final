@@ -1,12 +1,13 @@
 {% extends 'base.html' %}{% block title %} Mi Casita - Home
 {% endblock %} {% block content %}
 {% load static %}
-<div class="container mt-4">
+<div class="container mt-4 mb-4">
   <h1 class="text-center mb-5">Bienvenido a Mi Casita!</h1>
   <h6 class="text-center mb-2">Explora las propiedades que manejamos a lo largo de todo Chile!</h3>
     {% include "buscar.html"%}
   </br>
   <div class="row">
+    <p class="font-weight-light mb-1">Puedes seleccionar por regiones!</p>
     {% for region in regions %}
     <div class="col-md-3 m-0 p-0">
       <div class="wrapper">
@@ -16,7 +17,7 @@
         <div class="imagenregion">
           <img
             src="{% static 'img/' %}{{ region.nombre|slugify }}.jpg"
-            class="card-img-top"
+            class="card-img-top imagenlink"
             alt="Imagen de {{ region.nombre }}"
           />
           <div class="hover-text card-text text-center">
@@ -30,5 +31,26 @@
     </div>
     {% endfor %}
   </div>
+</div>
+<div id="carrusel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <img src="{% static 'img/carrusel-soltero.jpg' %}" class="d-block w-100" alt="..." style="max-height: 600px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/carrusel-parejaperro.jpg' %}" class="d-block w-100" alt="..." style="max-height: 600px">
+    </div>
+    <div class="carousel-item active">
+      <img src="{% static 'img/carrusel-familia.jpg' %}" class="d-block w-100" alt="..." style="max-height: 600px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 {% endblock %}

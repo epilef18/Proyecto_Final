@@ -1,10 +1,13 @@
 /* Estilos generales*/
 body {
   background-color: #a6deef;
-  padding-top: 0px;
+  padding-top: 50px;
 }
 p {
   text-align: center;
+}
+ul {
+  list-style-type: none;
 }
 /* Estilos de clases */
 .footer {
@@ -12,6 +15,9 @@ p {
 }
 .card-img-top {
   height: 200px;
+}
+.imagenlink{
+  height: 150px;
 }
 .imagenregion {
   object-fit: cover;
@@ -72,9 +78,13 @@ p {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
 /* Animations */
 .animate-logo {
   animation: float 3s infinite;
+}
+.imgcar {
+  max-height: 600px;
 }
 
 @keyframes float {
