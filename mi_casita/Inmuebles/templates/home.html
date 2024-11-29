@@ -1,7 +1,7 @@
 {% extends 'base.html' %}{% block title %} Mi Casita - Home
 {% endblock %} {% block content %}
 {% load static %}
-<div class="container mt-4 mb-4">
+<div class="container my-5">
   <h1 class="text-center mb-5">Bienvenido a Mi Casita!</h1>
   <h6 class="text-center mb-2">Explora las propiedades que manejamos a lo largo de todo Chile!</h6>
     {% include "buscar.html"%}
@@ -31,57 +31,73 @@
     </div>
     {% endfor %}
   </div>
-<span class="text-left m-3">Consejos inmobiliarios</span>
-<div class="row row-cols-1 row-cols-md-4">
-<div class="col">
-  <div class="card h-100">
-    <img class="card-img-top" src="{% static 'img/cardshome1.jpg' %}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Cómo elegir una casa</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni molestias, praesentium assumenda inventore porro incidunt </p>
+</div>
+<div class="container col-12 mb-4">
+  <span class="text-left">Consejos inmobiliarios</span>
+  <div class="row row-cols-1 row-cols-md-4">
+  <div class="col my-2">
+    <div class="card h-100 mx-2 ">
+      <img class="card-img-top" src="{% static 'img/cardshome1.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title text-center">Cómo elegir una casa</h5>
+        <p class="card-text">"Elegir una casa para arrendar requiere planificación y buenas decisiones."</p>
+      </div>
     </div>
   </div>
-</div>
-<div class="col">
-  <div class="card h-100">
-    <img class="card-img-top" src="{% static 'img/homecards2.webp' %}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Cómo elegir un arrendatario</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, atque blanditiis esse, labore inventore aperiam saepe nulla </p>
+  <div class="col my-2">
+    <div class="card h-100 mx-2 ">
+      <img class="card-img-top" src="{% static 'img/homecards2.webp' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title text-center">Cómo elegir un arrendatario</h5>
+        <p class="card-text">"Seleccionar un buen arrendatario asegura confianza y protección patrimonial."</p>
+      </div>
     </div>
   </div>
-</div>
-<div class="col">
-  <div class="card h-100">
-    <img class="card-img-top" src="{% static 'img/homecards4.jpg' %}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Invertir en el mercado inmobiliario</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid corporis fugit, voluptatum quae dolorem quos at est totam </p>
+  <div class="col my-2"> 
+    <div class="card h-100 mx-2 ">
+      <img class="card-img-top" src="{% static 'img/homecards4.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title text-center">Invertir en el mercado inmobiliario</h5>
+        <p class="card-text">"Invertir en bienes raíces ofrece seguridad, rentabilidad y oportunidades financieras."</p>
+      </div>
     </div>
   </div>
-</div>
-<div class="col">
-  <div class="card h-100">
-    <img class="card-img-top" src="{% static 'img/homecards3.jpg' %}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Arriendo compartido: cómo sobreponerse a los precios de arriendo</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos mollitia officia illo architecto voluptatem, inventore </p>
+  <div class="col my-2">
+    <div class="card h-100 mx-2 ">
+      <img class="card-img-top" src="{% static 'img/homecards3.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title text-center">Arriendo compartido</h5>
+        <p class="card-text">"Compartir arriendo reduce costos, fomenta la convivencia y mejora la economía personal."</p>
+      </div>
+    </div>
     </div>
   </div>
   </div>
 </div>
-</div>
-</div>
-<div id="carrusel" class="carousel slide" data-bs-ride="carousel">
+
+<span class="font-weight-light">Testimonios de nuestros clientes satisfechos!</span>
+<div id="carrusel" class="carousel slide mb-5" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item">
       <img src="{% static 'img/carrusel-soltero.jpg' %}" class="d-block w-100" alt="..." style="max-height: 600px">
+      <div class="carousel-caption d-none d-md-block">
+        <h2 style="font-weight: 700;">Esteban:</h2>
+        <span style="font-weight: 500; color: #4dbedf; font-size: 30px;">"Mi Casita me permite encontrar arriendos rápido y fácil, ya que constantemente estoy mudándome de ciudad por mi trabajo."</span>
+      </div>
     </div>
     <div class="carousel-item">
       <img src="{% static 'img/carrusel-parejaperro.jpg' %}" class="d-block w-100" alt="..." style="max-height: 600px">
+      <div class="carousel-caption d-none d-md-block">
+        <h2 style="font-weight: 700; color: #4dbedf;">Pedro, Lucía y Almendra:</h2>
+        <span style="font-weight: 500; color: #2694ab; font-size: 30px;">"Logramos encontrar una casa apenas quisimos independizarnos y comenzar una familia."</span>
+      </div>
     </div>
     <div class="carousel-item active">
       <img src="{% static 'img/carrusel-familia.jpg' %}" class="d-block w-100" alt="..." style="max-height: 600px">
+      <div class="carousel-caption d-none d-md-block">
+        <h2 style="font-weight: 700;">Familia Gonzalez-Urrutia:</h2>
+        <span style="font-weight: 500; color: #4dbedf; font-size: 30px;">"Mi Casita nos ayudó un monton a encontrar una casa cuando nos quisimos mudar a la ciudad por la educación de nuestros hijos."</span>
+      </div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">

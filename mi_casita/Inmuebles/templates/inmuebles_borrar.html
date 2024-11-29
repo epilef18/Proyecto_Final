@@ -2,10 +2,10 @@
 <div class="container mt-5">
   <h1 class="text-center">Eliminar Inmueble</h1>
   <p>¿Estás seguro de que deseas eliminar este inmueble?</p>
-  <form method="post">
+  <form method="post" class="text-center">
     {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Eliminar</button>
-    <a href="{% url 'inmuebles_list' %}" class="btn btn-secondary">Cancelar</a>
+    <button type="submit" class="btn btn-outline-danger">Eliminar</button>
+    <a href="{% url 'inmuebles_list' %}" class="btn btn-outline-secondary">Cancelar</a>
   </form>
 </div>
 {% endblock %}
