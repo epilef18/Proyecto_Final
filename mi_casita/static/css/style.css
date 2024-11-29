@@ -14,6 +14,7 @@ ul {
 span{
   font-size: 18px;
   font-weight: 200;
+  color: #a0684f;
 }
 h1{
   color: #a0684f;
@@ -41,6 +42,9 @@ h6{
 .imagenregion {
   object-fit: cover;
   display: block;
+}
+.card-title{
+  color: #2694ab;
 }
 .card-precio {
   font-family: "Lucida Console", "Courier New", monospace;
