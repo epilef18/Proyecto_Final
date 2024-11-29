@@ -152,3 +152,17 @@ def buscar(request):
 
     data = [{"id": r.id, "nombre": r.nombre} for r in resultados]
     return JsonResponse(data, safe=False)
+
+def invertir(request):
+    return render(request, "invertir.html", {})
+
+def elegirarrendatario(request):
+    return render(request, "elegirarrendatario.html", {})
+
+def arriendocompartido(request):
+    return render(request, "arriendocompartido.html", {})
+
+def elegircasa(request):
+    return render(request, "elegircasa.html", {})
+
+

@@ -18,6 +18,10 @@ from Inmuebles.views import (
     MiInmueblesCreateView,
     MiInmueblesUpdateView,
     MiInmueblesDeleteView,
+    elegircasa,
+    invertir,
+    elegirarrendatario,
+    arriendocompartido,
 )
 
 
@@ -54,6 +58,10 @@ urlpatterns = [
     path("perfil/", perfil_usuario, name="perfil_usuario"),
     path("perfil/editar/<int:pk>/", editar_perfil, name="editar_perfil"),
     path("buscar/", buscar, name="buscar"),
+    path("elegircasa/", elegircasa, name="Elegir Casa"),
+    path("invertir/", invertir, name="Invertir" ),
+    path("elegirarrendatario/", elegirarrendatario, name="Elegir Arrendatario" ),
+    path("arriendocompartido/", arriendocompartido, name="Arriendo Compartido" ),
 ]
 
 
