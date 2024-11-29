@@ -13,13 +13,13 @@ from Inmuebles.views import (
     lista_inmuebles_por_region,
     detalle_inmueble,
     editar_perfil,
+    acceso_denegado,
     MiInmueblesListView,
     MiInmueblesDetailView,
     MiInmueblesCreateView,
     MiInmueblesUpdateView,
     MiInmueblesDeleteView,
 )
-
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -54,6 +54,7 @@ urlpatterns = [
     path("perfil/", perfil_usuario, name="perfil_usuario"),
     path("perfil/editar/<int:pk>/", editar_perfil, name="editar_perfil"),
     path("buscar/", buscar, name="buscar"),
+    path("acceso-denegado/", acceso_denegado, name="acceso_denegado"),
 ]
 
 
