@@ -19,6 +19,9 @@ span{
 h1{
   color: #a0684f;
 }
+h2{
+  color: #2694ab; 
+}
 h3{
   color: #442c22;
 }
@@ -31,6 +34,10 @@ h6{
 /* Estilos de clases */
 
 .footer {
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: #a6deef;
 }
 .card-img-top {
@@ -100,6 +107,10 @@ h6{
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+.carousel-caption{
+  text-align: right;
+  color:#f2a9a9;
 }
 /* Animaciones */
 .animate-logo {

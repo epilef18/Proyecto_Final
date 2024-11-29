@@ -6,7 +6,7 @@
     <div class="col-md-6">
       <form method="POST" class="mt-4 p-4 border rounded bg-light shadow">
         {% csrf_token %} {{ form.as_p }}
-        <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+        <button type="submit" class="btn btn-outline-primary w-100">Ingresar</button>
       </form>
 
       {% if form.errors %}

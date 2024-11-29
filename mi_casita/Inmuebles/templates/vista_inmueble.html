@@ -35,15 +35,15 @@
       <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
         <a
           href="{% url 'inmueble_form' object.id %}"
-          class="btn btn-warning me-md-2"
+          class="btn btn-outline-warning me-md-2"
           >Editar</a
         >
         <a
           href="{% url 'inmueble_eliminar' object.id %}"
-          class="btn btn-danger me-md-2"
+          class="btn btn-outline-danger me-md-2"
           >Eliminar</a
         >
-        <a href="{% url 'inmuebles_list' %}" class="btn btn-secondary"
+        <a href="{% url 'inmuebles_list' %}" class="btn btn-outline-light"
           >Volver a la lista</a
         >
       </div>
