@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RegistroUsuarioForm
 from .models import Inmueble, Region, PerfilUsuario, Comuna
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .mixins import ArrendadorRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.http import JsonResponse
@@ -86,7 +87,9 @@ def detalle_inmueble(request, id):
 
 
 # ------------------manejo de inmuebles por usuario--------------------------
-class MiInmueblesListView(LoginRequiredMixin, ListView):
+
+
+class MiInmueblesListView(LoginRequiredMixin, ArrendadorRequiredMixin, ListView):
     model = Inmueble
     template_name = "inmuebles_list.html"
     context_object_name = "inmuebles"
@@ -95,7 +98,7 @@ class MiInmueblesListView(LoginRequiredMixin, ListView):
         return Inmueble.objects.filter(usuario=self.request.user)
 
 
-class MiInmueblesDetailView(LoginRequiredMixin, DetailView):
+class MiInmueblesDetailView(LoginRequiredMixin, ArrendadorRequiredMixin, DetailView):
     model = Inmueble
     template_name = "vista_inmueble.html"
 
@@ -103,7 +106,7 @@ class MiInmueblesDetailView(LoginRequiredMixin, DetailView):
         return Inmueble.objects.filter(usuario=self.request.user)
 
 
-class MiInmueblesCreateView(LoginRequiredMixin, CreateView):
+class MiInmueblesCreateView(LoginRequiredMixin, ArrendadorRequiredMixin, CreateView):
     model = Inmueble
     form_class = InmuebleForm
     template_name = "inmuebles_creacion.html"
@@ -114,7 +117,7 @@ class MiInmueblesCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class MiInmueblesUpdateView(LoginRequiredMixin, UpdateView):
+class MiInmueblesUpdateView(LoginRequiredMixin, ArrendadorRequiredMixin, UpdateView):
     model = Inmueble
     form_class = InmuebleForm
     template_name = "inmuebles_form.html"
@@ -124,13 +127,18 @@ class MiInmueblesUpdateView(LoginRequiredMixin, UpdateView):
         return Inmueble.objects.filter(usuario=self.request.user)
 
 
-class MiInmueblesDeleteView(LoginRequiredMixin, DeleteView):
+class MiInmueblesDeleteView(LoginRequiredMixin, ArrendadorRequiredMixin, DeleteView):
     model = Inmueble
     template_name = "inmuebles_borrar.html"
     success_url = reverse_lazy("inmuebles_list")
 
     def get_queryset(self):
         return Inmueble.objects.filter(usuario=self.request.user)
+
+
+def acceso_denegado(request):
+    """Vista para mostrar advertencia a usuarios no autorizados."""
+    return render(request, "acceso_denegado.html")
 
 
 # ======= Perfil Usuario

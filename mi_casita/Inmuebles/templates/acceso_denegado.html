@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acceso Denegado</title>
+  </head>
+  <body style="padding: 20px; margin-top: 50px">
+    <div class="container">
+      <h1 class="text-center">Acceso Denegado</h1>
+      <p>
+        No tienes permiso para acceder a esta sección. Este contenido es
+        exclusivo para arrendadores. Si deseas publicar un inmueble, debes
+        cambiar tu tipo de usuario a arrendador.
+      </p>
+      <a href="{% url 'home' %}}" class="btn btn-outline-success"
+        >Volver a Inicio</a
+      >
+    </div>
+  </body>
+</html>
+{% endblock %}

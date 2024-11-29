@@ -13,6 +13,7 @@ from Inmuebles.views import (
     lista_inmuebles_por_region,
     detalle_inmueble,
     editar_perfil,
+    acceso_denegado,
     MiInmueblesListView,
     MiInmueblesDetailView,
     MiInmueblesCreateView,
@@ -23,7 +24,6 @@ from Inmuebles.views import (
     elegirarrendatario,
     arriendocompartido,
 )
-
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -58,10 +58,12 @@ urlpatterns = [
     path("perfil/", perfil_usuario, name="perfil_usuario"),
     path("perfil/editar/<int:pk>/", editar_perfil, name="editar_perfil"),
     path("buscar/", buscar, name="buscar"),
+
     path("elegircasa/", elegircasa, name="Elegir Casa"),
     path("invertir/", invertir, name="Invertir" ),
     path("elegirarrendatario/", elegirarrendatario, name="Elegir Arrendatario" ),
     path("arriendocompartido/", arriendocompartido, name="Arriendo Compartido" ),
+    path("acceso-denegado/", acceso_denegado, name="acceso_denegado"),
 ]
 
 
